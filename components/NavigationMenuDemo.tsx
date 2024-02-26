@@ -16,6 +16,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle
 } from '@/components/ui/navigation-menu'
+import SheetLeft from './sheet/SheetLeft'
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -56,7 +57,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function NavigationMenuDemo() {
   return (
-    <div className=" flex bg-slate-500 h-16 items-center justify-center gap-y-5 fixed w-full top-0 opacity-10">
+    <div className=" flex bg-slate-500 h-16 items-center justify-center gap-y-5 fixed w-full top-0">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -128,6 +129,14 @@ export function NavigationMenuDemo() {
                   </ListItem>
                 ))}
               </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Методы</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                <SheetLeft />
+              </div>
             </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>

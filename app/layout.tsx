@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { NavigationMenuDemo } from '@/components/NavigationMenuDemo'
-import Navbar from '@/components/Navbar'
-import SidebarMenu from '@/components/sidebar/SidebarMenu'
-import SheetLeft from '@/components/sheetLeft/SheetLeft'
+// import Navbar from '@/components/Navbar'
+// import SidebarMenu from '@/components/sidebar/SidebarMenu'
+// import SheetLeft from '@/components/sheetLeft/SheetLeft'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,13 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* <Navbar /> */}
         {/* <SidebarMenu /> */}
-        {/* <NavigationMenuDemo /> */}
-        <SheetLeft />
+        <NavigationMenuDemo />
+        {/* <SheetLeft /> */}
         <div className=" flex flex-col items-center mt-20 mx-auto w-[90%] md:w-[80%] lg:w-[70%] xl:w-[1140px]">
           {children}
         </div>
-        {/* <Navbar /> */}
       </body>
     </html>
   )

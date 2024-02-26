@@ -1,7 +1,13 @@
 'use client'
 import { codeUseState } from '@/lib/data/useState/data'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import {
+  atomOneDark,
+  atomOneLight,
+  androidstudio,
+  ocean,
+  purebasic
+} from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import { Copy, Check } from 'lucide-react'
 import { useState } from 'react'
 
@@ -53,6 +59,36 @@ const CodeHighlighting = ({ data }: IData) => {
           <SyntaxHighlighter
             language="javascript"
             style={atomOneDark}
+            customStyle={{
+              padding: '25px'
+            }}
+            wrapLongLines={true}
+          >
+            {codeUseState}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter
+            language="javascript"
+            style={atomOneLight}
+            customStyle={{
+              padding: '25px'
+            }}
+            wrapLongLines={true}
+          >
+            {codeUseState}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter
+            language="javascript"
+            style={purebasic}
+            customStyle={{
+              padding: '25px'
+            }}
+            wrapLongLines={true}
+          >
+            {codeUseState}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter
+            language="javascript"
+            style={ocean}
             customStyle={{
               padding: '25px'
             }}

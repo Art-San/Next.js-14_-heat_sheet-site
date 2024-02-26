@@ -6,10 +6,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
+import Fetch from '@/lib/errorData/data'
 
 export default function Home() {
   return (
     <>
+      <Fetch />
       <DropdownMenu>
         <DropdownMenuTrigger>Mетоды</DropdownMenuTrigger>
         <DropdownMenuContent>
@@ -23,87 +25,6 @@ export default function Home() {
       </DropdownMenu>
       <h1 className=" text-yellow-700 text-[36px] font-semibold">
         Welcom to NextJS world - Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
-      </h1>
-      <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world Добро пожаловать в мир Next.js
       </h1>
     </>
   )
