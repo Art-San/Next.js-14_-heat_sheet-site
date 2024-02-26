@@ -39,9 +39,9 @@ const Navbar = () => {
                     key={item.id}
                     href={item.path}
                     className={
-                      'text-white text-[15px] p-2 ' +
+                      'text-gray-400 text-[15px] p-2 ' +
                       (pathname === item.path
-                        ? 'bg-white text-slate-800 rounded-xl'
+                        ? 'bg-white  text-gray-900 rounded-xl'
                         : '')
                     }
                   >
@@ -72,9 +72,9 @@ const Navbar = () => {
                   key={item.id}
                   href={item.path}
                   className={
-                    'text-white block p-2 ' +
+                    'text-black block p-2 ' +
                     (pathname === item.path
-                      ? 'bg-white text-slate-800 rounded-xl'
+                      ? 'bg-white text-slate-700 rounded-xl'
                       : '')
                   }
                 >

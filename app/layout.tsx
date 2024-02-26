@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { NavigationMenuDemo } from '@/components/NavigationMenuDemo'
+import Navbar from '@/components/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <div className=" flex flex-col items-center mt-20 mx-auto w-[90%] md:w-[80%] lg:w-[70%] xl:w-[1140px]">
           {children}
         </div>
+        {/* <Navbar /> */}
       </body>
     </html>
   )
