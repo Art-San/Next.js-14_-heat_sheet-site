@@ -56,13 +56,14 @@ export const pointsMenu: {
   {
     title: 'UseEffect',
     href: '/hooks/useeffect',
-    description: 'Позволяет синхронизировать компонент с внешней системой.'
+    description:
+      'Для выполнения побочных эффектов в функциональных компонентах..'
   },
   {
     title: 'UseContext',
     href: '/hooks/useContext',
     description:
-      'Позволяет читать контекст вашего компонента и подписываться на него.'
+      'Позволяет читать контекст вашего компонента и подписываться на его изменения.'
   },
   {
     title: 'UseRef',
@@ -80,6 +81,11 @@ export const pointsMenu: {
     title: 'UseCallback',
     href: '/hooks/usecallback',
     description:
-      'Позволяет кэшировать определение функции между повторными рендерингами.'
+      'Кэширующий функцию между рендерами для оптимизации производительности.'
+  },
+  {
+    title: 'Errors',
+    href: '/hooks/errors',
+    description: 'Не правильная реализация и варианты исправления.'
   }
 ]

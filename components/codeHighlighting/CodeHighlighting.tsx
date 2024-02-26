@@ -1,32 +1,28 @@
-'use client'
-import { codeUseState } from '@/lib/data/useState/data'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import {
   atomOneDark,
-  atomOneLight,
+  purebasic,
   androidstudio,
-  ocean,
-  purebasic
+  agate
 } from 'react-syntax-highlighter/dist/esm/styles/hljs'
-import { Copy, Check } from 'lucide-react'
-import { useState } from 'react'
+import CopyCodeButton from './CopyCodeButton'
+
+type VariantType = 'first' | 'error' | 'extra' | 'default'
 
 interface IData {
   data: string
+  variant: VariantType
 }
-const CodeHighlighting = ({ data }: IData) => {
-  console.log('data', data)
-  const [copy, setCopy] = useState(false)
 
-  const handleCloneClick = (codeUseState: string) => {
-    setCopy(true)
+const arr = {
+  first: atomOneDark,
+  error: purebasic,
+  extra: androidstudio,
+  default: agate
+}
 
-    navigator.clipboard.writeText(codeUseState)
-
-    setTimeout(() => {
-      setCopy(false)
-    }, 3000)
-  }
+const CodeHighlighting = ({ data, variant }: IData) => {
+  const style = arr[variant]
 
   return (
     <>
@@ -34,67 +30,17 @@ const CodeHighlighting = ({ data }: IData) => {
         <div className=" max-w-2xl min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden ">
           <div className=" flex justify-between px-4 text-white text-xs items-center">
             <p className="text-sm">Example code</p>
-            {copy ? (
-              <button
-                className=" py-1 inline-flex items-center gap-1"
-                onClick={() => handleCloneClick(codeUseState)}
-              >
-                <span className="mt-1">
-                  <Check size={15} />
-                </span>
-                Copied!
-              </button>
-            ) : (
-              <button
-                className=" py-1 inline-flex items-center gap-1"
-                onClick={() => handleCloneClick(codeUseState)}
-              >
-                <span className="mt-1">
-                  <Copy size={15} />
-                </span>
-                Copy Code
-              </button>
-            )}
+            <CopyCodeButton data={data} />
           </div>
           <SyntaxHighlighter
             language="javascript"
-            style={atomOneDark}
+            style={style}
             customStyle={{
               padding: '25px'
             }}
             wrapLongLines={true}
           >
-            {codeUseState}
-          </SyntaxHighlighter>
-          <SyntaxHighlighter
-            language="javascript"
-            style={atomOneLight}
-            customStyle={{
-              padding: '25px'
-            }}
-            wrapLongLines={true}
-          >
-            {codeUseState}
-          </SyntaxHighlighter>
-          <SyntaxHighlighter
-            language="javascript"
-            style={purebasic}
-            customStyle={{
-              padding: '25px'
-            }}
-            wrapLongLines={true}
-          >
-            {codeUseState}
-          </SyntaxHighlighter>
-          <SyntaxHighlighter
-            language="javascript"
-            style={ocean}
-            customStyle={{
-              padding: '25px'
-            }}
-            wrapLongLines={true}
-          >
-            {codeUseState}
+            {data}
           </SyntaxHighlighter>
         </div>
       </div>

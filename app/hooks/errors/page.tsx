@@ -13,6 +13,8 @@ import {
 import Subtitle from '@/components/typografy/Subtitle'
 
 import Title from '@/components/typografy/Title'
+import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
+import { bugFixed, errorData } from '@/lib/errorData/data'
 
 const errorHooks = () => {
   return (
@@ -39,14 +41,9 @@ const errorHooks = () => {
 
       <div className="">
         <Subtitle>Примеры</Subtitle>
-        <div className=" flex flex-col mt-5">
-          {/* <Counter /> */}
-
-          {/* <Count /> */}
-          {/* <Click /> */}
-          {/* <ExampleBad /> */}
-          {/* <ExampleColor /> */}
-          {/* <Example4 /> */}
+        <div className=" flex gap-1 mt-5">
+          <CodeHighlighting data={errorData} variant="error" />
+          <CodeHighlighting data={bugFixed} variant="first" />
         </div>
       </div>
     </>

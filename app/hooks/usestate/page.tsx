@@ -1,8 +1,3 @@
-// const page = () => {
-//   return <div>Use State</div>
-// }
-// export default page
-
 import React from 'react'
 import {
   Accordion,
