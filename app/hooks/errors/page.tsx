@@ -14,7 +14,12 @@ import Subtitle from '@/components/typografy/Subtitle'
 
 import Title from '@/components/typografy/Title'
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
-import { bugFixed, errorData } from '@/lib/errorData/data'
+import {
+  bugFixed,
+  errorData,
+  errorPrice,
+  fixErrorPrice
+} from '@/lib/errorData/data'
 
 const errorHooks = () => {
   return (
@@ -41,9 +46,15 @@ const errorHooks = () => {
 
       <div className="">
         <Subtitle>Примеры</Subtitle>
-        <div className=" flex gap-1 mt-5">
-          <CodeHighlighting data={errorData} variant="error" />
-          <CodeHighlighting data={bugFixed} variant="first" />
+        <div className=" flex gap-4 mt-5">
+          <div className=" ">
+            <CodeHighlighting data={errorData} variant="error" />
+          </div>
+          <div className="">
+            <CodeHighlighting data={bugFixed} variant="first" />
+          </div>
+          {/* <CodeHighlighting data={errorPrice} variant="error" /> */}
+          {/* <CodeHighlighting data={fixErrorPrice} variant="first" /> */}
         </div>
       </div>
     </>

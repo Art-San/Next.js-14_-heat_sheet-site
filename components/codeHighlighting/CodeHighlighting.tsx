@@ -14,34 +14,48 @@ interface IData {
   variant: VariantType
 }
 
-const arr = {
-  first: atomOneDark,
-  error: purebasic,
-  extra: androidstudio,
-  default: agate
+// const arr = {
+//   first: atomOneDark,
+//   error: purebasic,
+//   extra: androidstudio,
+//   default: agate
+// }
+const style = {
+  first: { tema: atomOneDark, size: '12px' },
+  error: { tema: purebasic, size: '12px' },
+  default: { tema: agate, size: '14px' },
+  extra: { tema: androidstudio, size: '16px' }
 }
 
+console.log('arr2, ', style.first.size)
+
 const CodeHighlighting = ({ data, variant }: IData) => {
-  const style = arr[variant]
+  const tema = style[variant].tema
+  const size = style[variant].size
+  // const style = arr[variant]
 
   return (
     <>
       <div className="bg-gray-500 grid place-items-center">
         <div className=" max-w-2xl min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden ">
           <div className=" flex justify-between px-4 text-white text-xs items-center">
-            <p className="text-sm">Example code</p>
+            <p className=" text-xs">Example code</p>
+            <p className="text-xs">пример</p>
             <CopyCodeButton data={data} />
           </div>
-          <SyntaxHighlighter
-            language="javascript"
-            style={style}
-            customStyle={{
-              padding: '25px'
-            }}
-            wrapLongLines={true}
-          >
-            {data}
-          </SyntaxHighlighter>
+          <div className="m-[2px]">
+            <SyntaxHighlighter
+              language="javascript"
+              style={tema}
+              customStyle={{
+                padding: '25px',
+                fontSize: size
+              }}
+              wrapLongLines={true}
+            >
+              {data}
+            </SyntaxHighlighter>
+          </div>
         </div>
       </div>
     </>
