@@ -1,32 +1,33 @@
 // 'use client'
-// import { ChangeEvent, useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 
-// export default function BigForm() {
-//   console.log('Рендер ') // Каждый раз при нажатии кнопки
-//   // { num: 100, price: true } так это ссылочный объект
-//   const [price, setPrice] = useState({ num: 100, price: true })
+// export default function Fetch() {
+//   const [product, setProduct] = useState()
 
-//   const handleClick = () => {
-//     setPrice({ num: 100, price: true })
-//   }
-
-//   // чтоб не использовался useEffect
-//   // ссылаемся на элемент объекта "price.num"
 //   useEffect(() => {
-//     console.log('я использован')
-//   }, [price.num])
+//     fetch('https://dummyjson.com/products/1')
+//       .then((res) => res.json())
+//       .then((data) => {
+//         setProduct(data)
+//       })
+//   }, [])
+
 //   return (
 //     <div className="">
-//       <button onClick={handleClick}>Жми</button>
+//       <h1>{product?.title}</h1>
+
+//       <h2>Описание</h2>
+
+//       <p>{product?.description}</p>
 //     </div>
 //   )
 // }
 
 // 1. В product.title и product.description после product ставим "?".
 // 2. const [product, setProduct] = useState() если мы предполагаем что product изначально пустой то использовать undefined не верно, использовать null
-// 3. Можем добавить State для ЗАГРУЗКИ
+// 3. Можем добавить State для ЗАГРУЗКИ [loading, setLoading]
 
-export const errorData = `import { useEffect, useState } from "react";
+export const errorFitch = `import { useEffect, useState } from "react";
 
 export default function Fetch() {
 
@@ -54,7 +55,7 @@ export default function Fetch() {
     )
 }`
 
-export const bugFixed = `interface IProduct {title: string, description: string}
+export const fixErrFitch = `interface IProduct {title: string, description: string}
 // interface for TS
 export default function Fetch() {
   const [loading, setLoading] = useState(true)

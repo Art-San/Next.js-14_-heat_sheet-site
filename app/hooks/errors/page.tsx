@@ -14,14 +14,11 @@ import Subtitle from '@/components/typografy/Subtitle'
 
 import Title from '@/components/typografy/Title'
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
-import {
-  bugFixed,
-  errorData,
-  errorPrice,
-  fixErrorPrice
-} from '@/lib/errorData/data'
+import { items } from '@/lib/errorData/objData'
 
 const errorHooks = () => {
+  const { fetch, form, price } = items
+  console.log('itemsError', fetch[0])
   return (
     <>
       <div className="">
@@ -48,13 +45,21 @@ const errorHooks = () => {
         <Subtitle>Примеры</Subtitle>
         <div className=" flex gap-4 mt-5">
           <div className=" ">
-            <CodeHighlighting data={errorData} variant="error" />
+            <CodeHighlighting data={fetch[0].code} variant="error" />
+            <div className="ml-[20px] w-[350px]">
+              <p>{fetch[0]?.desc1}</p>
+              <p>{fetch[0]?.desc2}</p>
+              <p>{fetch[0]?.desc3}</p>
+            </div>
           </div>
           <div className="">
-            <CodeHighlighting data={bugFixed} variant="first" />
+            <CodeHighlighting data={fetch[1].code} variant="first" />
+            <div className="ml-[20px] w-[350px]">
+              <p>{fetch[1]?.desc1}</p>
+              <p>{fetch[1]?.desc2}</p>
+              <p>{fetch[1]?.desc3}</p>
+            </div>
           </div>
-          {/* <CodeHighlighting data={errorPrice} variant="error" /> */}
-          {/* <CodeHighlighting data={fixErrorPrice} variant="first" /> */}
         </div>
       </div>
     </>
@@ -62,3 +67,46 @@ const errorHooks = () => {
 }
 
 export default errorHooks
+
+{
+  /* <div className="">
+        <Subtitle>Примеры</Subtitle>
+        <div className=" flex gap-4 mt-5">
+
+          <div className=" ">
+            <CodeHighlighting data={fetch[0].code} variant="error" />
+            <div className="ml-[20px] w-[350px]">
+              <p>{fetch[0]?.desc1}</p>
+              <p>{fetch[0]?.desc2}</p>
+              <p>{fetch[0]?.desc3}</p>
+            </div>
+          </div>
+          <div className="">
+            <CodeHighlighting data={fetch[1].code} variant="first" />
+            <div className="ml-[20px] w-[350px]">
+              <p>{fetch[1]?.desc1}</p>
+              <p>{fetch[1]?.desc2}</p>
+              <p>{fetch[1]?.desc3}</p>
+            </div>
+          </div>
+        </div>
+        <div className=" flex gap-4 mt-5">
+          <div className=" ">
+            <CodeHighlighting data={price[0].code} variant="error" />
+            <div className="ml-[20px] w-[350px]">
+              <p>{price[0]?.desc1}</p>
+              <p>{price[0]?.desc2}</p>
+              <p>{price[0]?.desc3}</p>
+            </div>
+          </div>
+          <div className="">
+            <CodeHighlighting data={price[1].code} variant="first" />
+            <div className="ml-[20px] w-[350px]">
+              <p>{price[1]?.desc1}</p>
+              <p>{price[1]?.desc2}</p>
+              <p>{price[1]?.desc3}</p>
+            </div>
+          </div>
+        </div>
+      </div> */
+}

@@ -20,19 +20,16 @@ interface IData {
 //   extra: androidstudio,
 //   default: agate
 // }
-const style = {
+const styles = {
   first: { tema: atomOneDark, size: '12px' },
   error: { tema: purebasic, size: '12px' },
   default: { tema: agate, size: '14px' },
   extra: { tema: androidstudio, size: '16px' }
 }
 
-console.log('arr2, ', style.first.size)
-
 const CodeHighlighting = ({ data, variant }: IData) => {
-  const tema = style[variant].tema
-  const size = style[variant].size
-  // const style = arr[variant]
+  const tema = styles[variant].tema
+  const size = styles[variant].size
 
   return (
     <>

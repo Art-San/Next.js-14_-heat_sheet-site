@@ -10,6 +10,7 @@ import {
 export default function Home() {
   return (
     <>
+      {/* <Fetch /> */}
       <DropdownMenu>
         <DropdownMenuTrigger>Mетоды</DropdownMenuTrigger>
         <DropdownMenuContent>
