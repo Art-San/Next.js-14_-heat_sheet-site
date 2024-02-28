@@ -4,6 +4,7 @@ import CardWrapper from '../../common/Card'
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
 import { codeUseState } from '@/lib/data/useState/data'
 import CounterButtons from './CounterButtons'
+import ImageModal from '@/components/ImageModal'
 
 const Counter = () => {
   return (
@@ -16,6 +17,10 @@ const Counter = () => {
           <SmallTitle>Подсчет количества рендеров</SmallTitle>
           <Separator className="mt-4  bg-slate-300" />
           <CounterButtons />
+          <ImageModal
+            path="/images/useState.png"
+            path500="/images/useState_500.png"
+          />
         </CardWrapper>
       </div>
     </div>

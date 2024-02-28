@@ -10,7 +10,7 @@ import Subtitle from '@/components/typografy/Subtitle'
 import Title from '@/components/typografy/Title'
 import Counter from '@/components/examples/useState/Counter'
 
-// import Count from '@/components/examples/useState/Count'
+import Count from '@/components/examples/useState/Count'
 // import Click from '@/components/examples/useState/Click'
 // import ExampleBad from '@/components/examples/useState/ExampleBad'
 // import ExampleColor from '@/components/examples/useState/ExampleColor'
@@ -46,7 +46,7 @@ const useState = () => {
         <div className=" flex flex-col mt-5">
           <Counter />
 
-          {/* <Count /> */}
+          <Count />
           {/* <Click /> */}
           {/* <ExampleBad /> */}
           {/* <ExampleColor /> */}
