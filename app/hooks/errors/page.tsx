@@ -2,7 +2,7 @@
 //   return <div>Use State</div>
 // }
 // export default page
-
+'use client'
 import React from 'react'
 import {
   Accordion,
@@ -15,98 +15,39 @@ import Subtitle from '@/components/typografy/Subtitle'
 import Title from '@/components/typografy/Title'
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
 import { items } from '@/lib/errorData/objData'
+import CodeTitle from '@/components/codeHighlighting/CodeTitle'
 
 const errorHooks = () => {
-  const { fetch, form, price } = items
-  console.log('itemsError', fetch[0])
+  const { fetch, price, user, form } = items
+  // console.log('itemsError', items.fetch)
   return (
     <>
-      <div className="">
-        <div className="">
-          <Title>UseState</Title>
-        </div>
+      <Title>UseState</Title>
 
-        <div className="">
-          <Accordion type="single" collapsible className="">
-            <AccordionItem value="item-1">
-              <AccordionTrigger className=" text-[24px]">
-                Информация
-              </AccordionTrigger>
-              <AccordionContent className="text-[18px]">
-                <code>Error</code> Подходы, которые приводят к ошибкам и вариант
-                исправления <code>set</code>.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </div>
+      <Accordion type="single" collapsible className="w-1/2">
+        <AccordionItem value="item-2">
+          <AccordionTrigger className=" flex text-[24px] justify-center">
+            Информация
+          </AccordionTrigger>
+          <AccordionContent className="text-[18px]">
+            Подходы, которые приводят к ошибкам и вариант исправления. Нe
+            которые примеры из видео{' '}
+            <a
+              href="https://www.youtube.com/watch?v=-7-M82_Nh_M"
+              className=" text-blue-700"
+            >
+              ссылка
+            </a>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
 
-      <div className="">
-        <Subtitle>Примеры</Subtitle>
-        <div className=" flex gap-4 mt-5">
-          <div className=" ">
-            <CodeHighlighting data={fetch[0].code} variant="error" />
-            <div className="ml-[20px] w-[350px]">
-              <p>{fetch[0]?.desc1}</p>
-              <p>{fetch[0]?.desc2}</p>
-              <p>{fetch[0]?.desc3}</p>
-            </div>
-          </div>
-          <div className="">
-            <CodeHighlighting data={fetch[1].code} variant="first" />
-            <div className="ml-[20px] w-[350px]">
-              <p>{fetch[1]?.desc1}</p>
-              <p>{fetch[1]?.desc2}</p>
-              <p>{fetch[1]?.desc3}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CodeTitle data={fetch} />
+      <CodeTitle data={price} />
+      <CodeTitle data={user} />
+      <CodeTitle data={form} />
     </>
   )
 }
 
 export default errorHooks
-
-{
-  /* <div className="">
-        <Subtitle>Примеры</Subtitle>
-        <div className=" flex gap-4 mt-5">
-
-          <div className=" ">
-            <CodeHighlighting data={fetch[0].code} variant="error" />
-            <div className="ml-[20px] w-[350px]">
-              <p>{fetch[0]?.desc1}</p>
-              <p>{fetch[0]?.desc2}</p>
-              <p>{fetch[0]?.desc3}</p>
-            </div>
-          </div>
-          <div className="">
-            <CodeHighlighting data={fetch[1].code} variant="first" />
-            <div className="ml-[20px] w-[350px]">
-              <p>{fetch[1]?.desc1}</p>
-              <p>{fetch[1]?.desc2}</p>
-              <p>{fetch[1]?.desc3}</p>
-            </div>
-          </div>
-        </div>
-        <div className=" flex gap-4 mt-5">
-          <div className=" ">
-            <CodeHighlighting data={price[0].code} variant="error" />
-            <div className="ml-[20px] w-[350px]">
-              <p>{price[0]?.desc1}</p>
-              <p>{price[0]?.desc2}</p>
-              <p>{price[0]?.desc3}</p>
-            </div>
-          </div>
-          <div className="">
-            <CodeHighlighting data={price[1].code} variant="first" />
-            <div className="ml-[20px] w-[350px]">
-              <p>{price[1]?.desc1}</p>
-              <p>{price[1]?.desc2}</p>
-              <p>{price[1]?.desc3}</p>
-            </div>
-          </div>
-        </div>
-      </div> */
-}

@@ -41,8 +41,8 @@ export const items = {
       teg: 'error',
       title: 'Price',
       code: errorPrice,
-      desc1: '',
-      desc2: '',
+      desc1: 'Увеличение конечной суммы при добавлении товара',
+      desc2: 'С useEffect работает.',
       desc3: ''
     },
     {
@@ -50,8 +50,8 @@ export const items = {
       teg: 'fix',
       title: 'Price',
       code: fixErrorPrice,
-      desc1: '',
-      desc2: '',
+      desc1: 'Убирали лишний код',
+      desc2: 'Без useEffect работает отлично',
       desc3: ''
     }
   ],
@@ -61,8 +61,8 @@ export const items = {
       teg: 'error',
       title: 'User',
       code: userError,
-      desc1: '',
-      desc2: '',
+      desc1: 'Задача в State в поле name добавить значение',
+      desc2: 'Не работает setUser((user.name = e.target.value))',
       desc3: ''
     },
     {
@@ -87,9 +87,9 @@ export const items = {
     },
     {
       id: 1,
-      teg: 'error',
+      teg: 'fix',
       title: 'Form',
-      code: bigFormError,
+      code: fixBigFormError,
       desc1: '',
       desc2: '',
       desc3: ''
@@ -98,7 +98,7 @@ export const items = {
   render: [
     {
       id: 1,
-      teg: 'no',
+      teg: 'fix',
       title: 'Render',
       code: peculiarityUseState,
       desc1: '',
@@ -109,7 +109,7 @@ export const items = {
   render2: [
     {
       id: 1,
-      teg: 'no',
+      teg: 'fix',
       title: 'Render2',
       code: useStateUseEffect,
       desc1: '',

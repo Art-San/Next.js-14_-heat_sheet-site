@@ -3,11 +3,13 @@ import {
   atomOneDark,
   purebasic,
   androidstudio,
-  agate
+  agate,
+  googlecode,
+  atomOneDarkReasonable
 } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import CopyCodeButton from './CopyCodeButton'
 
-type VariantType = 'first' | 'error' | 'extra' | 'default'
+type VariantType = 'fix' | 'error' | 'extra' | 'default' | ''
 
 interface IData {
   data: string
@@ -21,10 +23,11 @@ interface IData {
 //   default: agate
 // }
 const styles = {
-  first: { tema: atomOneDark, size: '12px' },
-  error: { tema: purebasic, size: '12px' },
+  fix: { tema: atomOneDark, size: '12px' },
+  error: { tema: atomOneDarkReasonable, size: '12px' },
   default: { tema: agate, size: '14px' },
-  extra: { tema: androidstudio, size: '16px' }
+  extra: { tema: androidstudio, size: '16px' },
+  '': { tema: googlecode, size: '10px' }
 }
 
 const CodeHighlighting = ({ data, variant }: IData) => {
@@ -37,7 +40,7 @@ const CodeHighlighting = ({ data, variant }: IData) => {
         <div className=" max-w-2xl min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden ">
           <div className=" flex justify-between px-4 text-white text-xs items-center">
             <p className=" text-xs">Example code</p>
-            <p className="text-xs">пример</p>
+            <p className="text-xs">{variant}</p>
             <CopyCodeButton data={data} />
           </div>
           <div className="m-[2px]">

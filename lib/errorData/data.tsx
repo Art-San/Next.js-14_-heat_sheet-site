@@ -179,16 +179,19 @@ export const bigFormError = `export default function BigForm() {
   return (
     <form className="">
       <input
+
           onChange={handleChance}
           type="text"
           name="name"
           placeholder="Имя" />
       <input
+
           onChange={handleChance}
           type="email" 
           name="email" 
           placeholder="Почта" />
       <input
+      
           onChange={handleChance}
           type="password"
           name="password"
