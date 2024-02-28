@@ -41,8 +41,8 @@ export const items = {
       teg: 'error',
       title: 'Price',
       code: errorPrice,
-      desc1: 'Увеличение конечной суммы при добавлении товара',
-      desc2: 'С useEffect работает.',
+      desc1: '1. Увеличение конечной суммы при добавлении товара',
+      desc2: '2. С useEffect работает.',
       desc3: ''
     },
     {
@@ -50,8 +50,8 @@ export const items = {
       teg: 'fix',
       title: 'Price',
       code: fixErrorPrice,
-      desc1: 'Убирали лишний код',
-      desc2: 'Без useEffect работает отлично',
+      desc1: '1. Убрали лишний хук',
+      desc2: '2. Без useEffect работает отлично',
       desc3: ''
     }
   ],
@@ -61,8 +61,8 @@ export const items = {
       teg: 'error',
       title: 'User',
       code: userError,
-      desc1: 'Задача в State в поле name добавить значение',
-      desc2: 'Не работает setUser((user.name = e.target.value))',
+      desc1: '1. Задача в State в поле name добавить значение',
+      desc2: '2. Не работает setUser((user.name = e.target.value))',
       desc3: ''
     },
     {
@@ -70,7 +70,8 @@ export const items = {
       teg: 'fix',
       title: 'User',
       code: fixUserError,
-      desc1: '',
+      desc1:
+        '1. С помощью спред (...) оператора разворачиваем объект, добавляем нужные поля',
       desc2: '',
       desc3: ''
     }
@@ -79,20 +80,22 @@ export const items = {
     {
       id: 1,
       teg: 'error',
-      title: 'Form',
+      title: 'Big Form',
       code: bigFormError,
-      desc1: '',
-      desc2: '',
-      desc3: ''
+      desc1: '1. Создаем компонент с множеством полей.',
+      desc2: '2. Добавили под каждое поле useState',
+      desc3: '3. Получилось не очень'
     },
     {
       id: 1,
       teg: 'fix',
-      title: 'Form',
+      title: 'Big Form',
       code: fixBigFormError,
-      desc1: '',
-      desc2: '',
-      desc3: ''
+      desc1:
+        '1. Убрали все useState кроме одного, добавили объект с именами полей.',
+      desc2: '2. В input добавили name со значением имя поля из объекта',
+      desc3:
+        '3. В setData с помощью спред (...) оператора разворачиваем объект, перезаписываем поля '
     }
   ],
   render: [

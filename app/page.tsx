@@ -6,11 +6,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
+// import User from '@/lib/errorData/data'
 
 export default function Home() {
   return (
     <>
-      {/* <Fetch /> */}
+      {/* <User /> */}
       <DropdownMenu>
         <DropdownMenuTrigger>Mетоды</DropdownMenuTrigger>
         <DropdownMenuContent>

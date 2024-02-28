@@ -1,25 +1,22 @@
 // 'use client'
-// import { useEffect, useState } from 'react'
+// import { ChangeEvent, useEffect, useState } from 'react'
 
-// export default function Fetch() {
-//   const [product, setProduct] = useState()
-
-//   useEffect(() => {
-//     fetch('https://dummyjson.com/products/1')
-//       .then((res) => res.json())
-//       .then((data) => {
-//         setProduct(data)
-//       })
-//   }, [])
+// export default function User() {
+//   const [user, setUser] = useState({
+//     name: '',
+//     age: '42',
+//     counter: ''
+//   })
+//   console.log('{ ...user', { ...user, name: 'tar', counter: 2 })
+//   // ChangeEvent<HTMLInputElement> for TS
+//   const handleChance = (e: ChangeEvent<HTMLInputElement>) => {
+//     setUser({ ...user, name: e.target.value })
+//   }
 
 //   return (
-//     <div className="">
-//       <h1>{product?.title}</h1>
-
-//       <h2>Описание</h2>
-
-//       <p>{product?.description}</p>
-//     </div>
+//     <form className="">
+//       <input onChange={handleChance} type="text" placeholder="Ваше имя" />
+//     </form>
 //   )
 // }
 
@@ -191,7 +188,7 @@ export const bigFormError = `export default function BigForm() {
           name="email" 
           placeholder="Почта" />
       <input
-      
+
           onChange={handleChance}
           type="password"
           name="password"
