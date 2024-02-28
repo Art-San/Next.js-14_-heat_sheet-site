@@ -1,22 +1,22 @@
-'use client'
+// 'use client'
 
-import { useEffect, useState } from 'react'
-import CodeModal from './CodeModal'
+// import { useEffect, useState } from 'react'
+// import CodeModal from './CodeModal'
 
-export const ModalProvider = () => {
-  const [isMounted, setIsMounted] = useState(false)
+// export const ModalProvider = () => {
+//   const [isMounted, setIsMounted] = useState(false)
 
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
+//   useEffect(() => {
+//     setIsMounted(true)
+//   }, [])
 
-  if (!isMounted) {
-    return null
-  }
+//   if (!isMounted) {
+//     return null
+//   }
 
-  return (
-    <>
-      <CodeModal />
-    </>
-  )
-}
+//   return (
+//     <>
+//       <CodeModal />
+//     </>
+//   )
+// }
