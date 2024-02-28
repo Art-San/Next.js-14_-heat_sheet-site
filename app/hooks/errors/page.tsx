@@ -1,7 +1,3 @@
-// const page = () => {
-//   return <div>Use State</div>
-// }
-// export default page
 'use client'
 import React from 'react'
 import {
@@ -10,19 +6,16 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/accordion'
-import Subtitle from '@/components/typografy/Subtitle'
 
 import Title from '@/components/typografy/Title'
-import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
 import { items } from '@/lib/errorData/objData'
 import CodeTitle from '@/components/codeHighlighting/CodeTitle'
 
 const errorHooks = () => {
   const { fetch, price, user, form } = items
-  // console.log('itemsError', items.fetch)
   return (
     <>
-      <Title>UseState</Title>
+      <Title>UseState & UseEffect</Title>
 
       <Accordion type="single" collapsible className="w-1/2">
         <AccordionItem value="item-2">

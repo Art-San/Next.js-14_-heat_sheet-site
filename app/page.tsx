@@ -6,14 +6,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-// import User from '@/lib/errorData/data'
 
 export default function Home() {
   return (
     <>
-      {/* <User /> */}
       <DropdownMenu>
-        <DropdownMenuTrigger>Mетоды</DropdownMenuTrigger>
+        <DropdownMenuTrigger className=" bg-slate-400 p-2 rounded-sm text-white">
+          Mетоды
+        </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
