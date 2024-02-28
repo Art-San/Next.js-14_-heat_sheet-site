@@ -9,51 +9,44 @@ import Subtitle from '@/components/typografy/Subtitle'
 
 import Title from '@/components/typografy/Title'
 import Counter from '@/components/examples/useState/Counter'
-
 import Count from '@/components/examples/useState/Count'
+
 // import Click from '@/components/examples/useState/Click'
-// import ExampleBad from '@/components/examples/useState/ExampleBad'
-// import ExampleColor from '@/components/examples/useState/ExampleColor'
-// import Example4 from '@/components/examples/useState/Example4'
+import ExampleBad from '@/components/examples/useState/ExampleBad'
+import ExampleColor from '@/components/examples/useState/ExampleColor'
+import Example4 from '@/components/examples/useState/Example4'
 
 const useState = () => {
   return (
-    <>
-      <div className="">
-        <div className="">
-          <Title>UseState</Title>
-        </div>
+    <div className=" flex flex-col items-center">
+      <Title>UseState</Title>
 
-        <div className="">
-          <Accordion type="single" collapsible className="">
-            <AccordionItem value="item-1">
-              <AccordionTrigger className=" text-[24px]">
-                Информация
-              </AccordionTrigger>
-              <AccordionContent className="text-[18px]">
-                <code>useState</code> возвращает кортеж (массив), в котором
-                содержится значение состояния и функция для его изменения. По
-                соглашению название функции изменения состояния начинается с{' '}
-                <code>set</code>.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </div>
+      <Accordion type="single" collapsible className="">
+        <AccordionItem value="item-1">
+          <AccordionTrigger className=" flex text-[24px] justify-center">
+            Информация
+          </AccordionTrigger>
+          <AccordionContent className="text-[18px]">
+            <code>useState</code> возвращает кортеж (массив), в котором
+            содержится значение состояния и функция для его изменения. По
+            соглашению название функции изменения состояния начинается с{' '}
+            <code>set</code>.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
 
-      <div className="">
+      <div className=" flex flex-col gap-5">
         <Subtitle>Примеры</Subtitle>
-        <div className=" flex flex-col mt-5">
+        <div className=" flex flex-col gap-9 ">
           <Counter />
-
           <Count />
           {/* <Click /> */}
           {/* <ExampleBad /> */}
-          {/* <ExampleColor /> */}
-          {/* <Example4 /> */}
+          <ExampleColor />
+          <Example4 />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

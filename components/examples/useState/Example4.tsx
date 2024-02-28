@@ -5,6 +5,8 @@ import { Separator } from '@/components/ui/separator'
 import SmallTitle from '@/components/typografy/SmallTitle'
 import { BsTrash } from 'react-icons/bs'
 import ImageModal from '@/components/ImageModal'
+import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
+import { example4 } from '@/lib/data/useState/data'
 
 interface ITask {
   text: string | null
@@ -67,10 +69,13 @@ const Example4 = () => {
     //     }))
   }
   return (
-    <div className="flex items-center justify-center">
-      <div className="flex px-[50px] py-[10px] ">
+    <div className="flex justify-center">
+      <div>
+        <CodeHighlighting data={example4} variant={'default'} />
+      </div>
+      <div className="w-1/2">
         <CardWrapper>
-          <div className=" ">
+          <div className="">
             <SmallTitle>Добавить</SmallTitle>
             <h3 className=" text-lg text-green-700">1. Правильно</h3>
             <p>
@@ -138,14 +143,11 @@ const Example4 = () => {
               Добавить
             </button>
           </div>
+          <ImageModal
+            path="/images/useState_Exampler4.png"
+            path500="/images/useState_500.png"
+          />
         </CardWrapper>
-      </div>
-      <div>
-        {/* <Screens /> */}
-        <ImageModal
-          path="/images/useState_Exampler4.png"
-          path500="/images/useState_500.png"
-        />
       </div>
     </div>
   )

@@ -14,11 +14,11 @@ import CodeTitle from '@/components/codeHighlighting/CodeTitle'
 const errorHooks = () => {
   const { fetch, price, user, form } = items
   return (
-    <>
+    <div className=" flex flex-col items-center">
       <Title>UseState & UseEffect</Title>
 
       <Accordion type="single" collapsible className="w-1/2">
-        <AccordionItem value="item-2">
+        <AccordionItem value="item-1">
           <AccordionTrigger className=" flex text-[24px] justify-center">
             Информация
           </AccordionTrigger>
@@ -39,7 +39,7 @@ const errorHooks = () => {
       <CodeTitle data={price} />
       <CodeTitle data={user} />
       <CodeTitle data={form} />
-    </>
+    </div>
   )
 }
 

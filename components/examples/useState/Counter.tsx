@@ -2,17 +2,17 @@ import SmallTitle from '@/components/typografy/SmallTitle'
 import { Separator } from '@/components/ui/separator'
 import CardWrapper from '../../common/Card'
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
-import { codeUseState } from '@/lib/data/useState/data'
+import { counter } from '@/lib/data/useState/data'
 import CounterButtons from './CounterButtons'
 import ImageModal from '@/components/ImageModal'
 
 const Counter = () => {
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex justify-center">
       <div>
-        <CodeHighlighting data={codeUseState} variant={'default'} />
+        <CodeHighlighting data={counter} variant={'default'} />
       </div>
-      <div className=" flex flex-col">
+      <div className=" w-1/3">
         <CardWrapper>
           <SmallTitle>Подсчет количества рендеров</SmallTitle>
           <Separator className="mt-4  bg-slate-300" />
