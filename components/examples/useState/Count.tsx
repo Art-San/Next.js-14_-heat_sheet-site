@@ -10,23 +10,30 @@ import { timer } from '@/lib/data/useState/data'
 
 const Count = () => {
   return (
-    <div className="flex justify-center">
-      <div className=" w-1/3">
+    <div className="flex  flex-col-reverse w-[90%] justify-center items-center md:w-full md:flex-row">
+      <div className=" w-full md:w-1/3 ">
         <CardWrapper>
-          <SmallTitle>Должен добавлять по 1, setInterval на 60 сек</SmallTitle>
-          <p>
-            Но хрен поими почему добавляет по 2, и вообще ломается setInterval
-            (ускаряется)
-          </p>
-          <Separator className="mt-4  bg-slate-300" />
-          <Timer />
-          <ImageModal
-            path="/images/useState_count.png"
-            path500="/images/useState_500.png"
-          />
+          <div className="flex  md:flex-col">
+            <div className="w-[70%] md:w-[100%]">
+              <SmallTitle>
+                Должен добавлять по 1, setInterval на 60 сек
+              </SmallTitle>
+              <p>
+                Но хрен поими почему добавляет по 2, и вообще ломается
+                setInterval (ускаряется)
+              </p>
+              <Separator className="mt-4  bg-slate-300" />
+              <Timer />
+            </div>
+            <ImageModal
+              path="/images/useState_count.png"
+              path500="/images/useState_500.png"
+            />
+          </div>
         </CardWrapper>
       </div>
-      <div>
+      <div className="">
+        {/* <div className=" flex w-[80%] md:w-full"> */}
         <CodeHighlighting data={timer} variant={'default'} />
       </div>
     </div>

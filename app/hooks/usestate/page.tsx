@@ -11,14 +11,13 @@ import Title from '@/components/typografy/Title'
 import Counter from '@/components/examples/useState/Counter'
 import Count from '@/components/examples/useState/Count'
 
-// import Click from '@/components/examples/useState/Click'
 import ExampleBad from '@/components/examples/useState/ExampleBad'
 import ExampleColor from '@/components/examples/useState/ExampleColor'
 import Example4 from '@/components/examples/useState/Example4'
 
 const useState = () => {
   return (
-    <div className=" flex flex-col items-center">
+    <div className=" flex flex-col w-full items-center">
       <Title>UseState</Title>
 
       <Accordion type="single" collapsible className="">
@@ -35,12 +34,11 @@ const useState = () => {
         </AccordionItem>
       </Accordion>
 
-      <div className=" flex flex-col gap-5">
+      <div className="flex flex-col ">
         <Subtitle>Примеры</Subtitle>
-        <div className=" flex flex-col gap-9 ">
+        <div className="flex flex-col items-center gap-20">
           <Counter />
           <Count />
-          {/* <Click /> */}
           <ExampleBad />
           <ExampleColor />
           <Example4 />

@@ -69,11 +69,12 @@ const Example4 = () => {
     //     }))
   }
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-col w-[100%] justify-center items-center xl:flex-row">
+      {/* <div className="flex justify-center"> */}
       <div>
         <CodeHighlighting data={example4} variant={'default'} />
       </div>
-      <div className="w-1/2">
+      <div className="w-[100%] xl:w-1/2">
         <CardWrapper>
           <div className="">
             <SmallTitle>Добавить</SmallTitle>

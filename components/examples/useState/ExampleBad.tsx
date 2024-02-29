@@ -14,11 +14,11 @@ interface IUser {
 
 function ExampleBad() {
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-col w-[90%] justify-center items-center xl:flex-row">
       <div>
         <CodeHighlighting data={fixErrFitch} variant={'default'} />
       </div>
-      <div className=" w-1/3">
+      <div className="">
         <CardWrapper>
           <SmallTitle>Пример того как не надо делать</SmallTitle>
           <h3 className=" text-base text-orange-700">

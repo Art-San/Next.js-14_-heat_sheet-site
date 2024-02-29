@@ -8,19 +8,23 @@ import ImageModal from '@/components/ImageModal'
 
 const Counter = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-col w-[90%] justify-center items-center md:flex-row  ">
       <div>
         <CodeHighlighting data={counter} variant={'default'} />
       </div>
-      <div className=" w-1/3">
+      <div className=" w-full lg:w-1/3">
         <CardWrapper>
-          <SmallTitle>Подсчет количества рендеров</SmallTitle>
-          <Separator className="mt-4  bg-slate-300" />
-          <CounterButtons />
-          <ImageModal
-            path="/images/useState.png"
-            path500="/images/useState_500.png"
-          />
+          <div className="flex  md:flex-col">
+            <div className="w-[70%] md:w-[100%]">
+              <SmallTitle>Подсчет количества рендеров</SmallTitle>
+              <Separator className="mt-4  bg-slate-300" />
+              <CounterButtons />
+            </div>
+            <ImageModal
+              path="/images/useState.png"
+              path500="/images/useState_500.png"
+            />
+          </div>
         </CardWrapper>
       </div>
     </div>

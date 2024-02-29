@@ -15,7 +15,7 @@ const CounterButtons = () => {
   }
 
   return (
-    <div className=" flex flex-col">
+    <div className=" flex flex-col w-[90%]">
       <p className="text-red-600 font-semibold">Count: {count}</p>
       <Button size={'costom'} className=" bg-red-600" onClick={handleIncrement}>
         плюс
