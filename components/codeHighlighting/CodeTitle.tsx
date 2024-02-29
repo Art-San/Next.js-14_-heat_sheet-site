@@ -12,12 +12,10 @@ interface ICodeTitle {
 }
 
 const CodeTitle = ({ data }: any) => {
-  console.log('data', data[0].title)
-
   return (
     <div className=" flex flex-col">
       <Subtitle>{data[0].title}</Subtitle>
-      <div className=" flex gap-4 mt-5">
+      <div className=" flex gap-4 mt-5 flex-col lg:flex-row">
         {data.map((el: ICodeTitle, index: number) => (
           <div key={index} className=" flex flex-col">
             <CodeHighlighting data={el?.code} variant={el?.teg} />
@@ -28,22 +26,6 @@ const CodeTitle = ({ data }: any) => {
             </div>
           </div>
         ))}
-        {/* <div className=" flex flex-col">
-          <CodeHighlighting data={data[0].code} variant="error" />
-          <div className="mt-2 ml-[20px] w-[350px]">
-            <p>{data[0]?.desc1}</p>
-            <p>{data[0]?.desc2}</p>
-            <p>{data[0]?.desc3}</p>
-          </div>
-        </div> */}
-        {/* <div className="flex flex-col">
-          <CodeHighlighting data={data[1].code} variant="first" />
-          <div className="mt-2 ml-[20px] w-[350px]">
-            <p>{data[1]?.desc1}</p>
-            <p>{data[1]?.desc2}</p>
-            <p>{data[1]?.desc3}</p>
-          </div>
-        </div> */}
       </div>
     </div>
   )
