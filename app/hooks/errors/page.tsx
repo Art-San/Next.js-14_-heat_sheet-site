@@ -17,12 +17,12 @@ const errorHooks = () => {
     <div className=" flex flex-col items-center">
       <Title>UseState & UseEffect</Title>
 
-      <Accordion type="single" collapsible className="w-1/2">
+      <Accordion type="single" collapsible className="">
         <AccordionItem value="item-1">
           <AccordionTrigger className=" flex text-[24px] justify-center">
             Информация
           </AccordionTrigger>
-          <AccordionContent className="text-[18px]">
+          <AccordionContent className="text-[18px] w-2/3 mx-auto">
             Подходы, которые приводят к ошибкам и вариант исправления. Нe
             которые примеры из видео{' '}
             <a

@@ -26,7 +26,7 @@ const useState = () => {
           <AccordionTrigger className=" flex text-[24px] justify-center">
             Информация
           </AccordionTrigger>
-          <AccordionContent className="text-[18px]">
+          <AccordionContent className="text-[18px] w-2/3 mx-auto">
             <code>useState</code> возвращает кортеж (массив), в котором
             содержится значение состояния и функция для его изменения. По
             соглашению название функции изменения состояния начинается с{' '}
