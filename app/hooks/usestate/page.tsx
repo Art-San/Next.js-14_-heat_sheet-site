@@ -41,7 +41,7 @@ const useState = () => {
           <Counter />
           <Count />
           {/* <Click /> */}
-          {/* <ExampleBad /> */}
+          <ExampleBad />
           <ExampleColor />
           <Example4 />
         </div>

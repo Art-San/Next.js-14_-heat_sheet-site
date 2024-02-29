@@ -1,4 +1,5 @@
 'use client'
+import Spinner from '@/components/ui/spinner'
 import { useEffect, useState } from 'react'
 
 interface IUser {
@@ -14,7 +15,12 @@ const FetchUser = () => {
       .then((json) => setUsers(json))
   }, [])
   if (!users) {
-    return <h1 className=" text-sm text-orange-700">Loading...</h1>
+    return (
+      <>
+        <Spinner />
+        <h1 className=" text-lg font-bold text-orange-700">Loading...</h1>
+      </>
+    )
   }
   return (
     <ul>

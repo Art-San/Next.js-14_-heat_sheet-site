@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import Link from 'next/link'
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx'
-import { menuItems } from '@/constants'
+import { menuItems } from '@/constants/hooksPoints'
 import Image from 'next/image'
 
 const Navbar = () => {

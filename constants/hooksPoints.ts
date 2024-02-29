@@ -42,7 +42,7 @@ export const footerLinks = [
 ]
 
 // https://react.dev/
-export const pointsMenu: {
+export const hooksPointsMenu: {
   title: string
   href: string
   description: string

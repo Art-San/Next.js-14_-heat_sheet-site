@@ -36,11 +36,11 @@ function ExampleBad() {
           </h3>
           <Separator className="mt-4  bg-slate-300" />
           <div className=" flex gap-6">
-            <FetchUser />
             <ImageModal
               path="/images/useState_ExampleBad.png"
               path500="/images/useState_500.png"
             />
+            <FetchUser />
           </div>
         </CardWrapper>
       </div>

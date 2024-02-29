@@ -1,4 +1,4 @@
-import { footerLinks } from '@/constants'
+import { footerLinks } from '@/constants/hooksPoints'
 import Image from 'next/image'
 import Link from 'next/link'
 

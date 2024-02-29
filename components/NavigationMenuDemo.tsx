@@ -4,7 +4,7 @@ import * as React from 'react'
 import Link from 'next/link'
 
 import { cn } from '@/lib/utils'
-import { pointsMenu } from '@/constants'
+import { hooksPointsMenu } from '@/constants/hooksPoints'
 import { usePathname } from 'next/navigation'
 // import { Icons } from '@/components/icons'
 import {
@@ -93,10 +93,10 @@ export function NavigationMenuDemo() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Хуки</NavigationMenuTrigger>
+            <NavigationMenuTrigger>Hooks</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {pointsMenu.map((component) => (
+                {hooksPointsMenu.map((component) => (
                   <ListItem
                     key={component.title}
                     title={component.title}

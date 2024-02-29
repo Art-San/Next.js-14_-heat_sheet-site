@@ -26,7 +26,7 @@ export default function Home() {
         </DropdownMenuContent>
       </DropdownMenu>
       <h1 className=" text-yellow-700 text-[36px] font-semibold">
-        Welcom to NextJS world - Добро пожаловать в мир Next.js
+        Welcom to NextJS world ------ Добро пожаловать в мир Next.js
       </h1>
     </>
   )
