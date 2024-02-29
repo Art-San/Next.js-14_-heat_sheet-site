@@ -39,7 +39,7 @@ const ExampleColor = () => {
         </CardWrapper>
       </div>
       <div>
-        <CodeHighlighting data={exampleColor} variant={'default'} />
+        <CodeHighlighting data={exampleColor} variant={'medium'} />
       </div>
     </div>
   )

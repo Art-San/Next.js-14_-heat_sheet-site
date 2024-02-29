@@ -34,7 +34,7 @@ const Count = () => {
       </div>
       <div className="">
         {/* <div className=" flex w-[80%] md:w-full"> */}
-        <CodeHighlighting data={timer} variant={'default'} />
+        <CodeHighlighting data={timer} variant={'medium'} />
       </div>
     </div>
   )

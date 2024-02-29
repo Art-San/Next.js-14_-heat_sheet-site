@@ -5,7 +5,7 @@ import { Separator } from '@/components/ui/separator'
 import SmallTitle from '@/components/typografy/SmallTitle'
 import ImageModal from '@/components/ImageModal'
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
-import { fixErrFitch } from '@/lib/errorData/data'
+import { fixErrFitch } from '@/lib/data/errorData/data'
 import FetchUser from './FetchUser'
 interface IUser {
   id: number
@@ -16,7 +16,7 @@ function ExampleBad() {
   return (
     <div className="flex flex-col w-[90%] justify-center items-center xl:flex-row">
       <div>
-        <CodeHighlighting data={fixErrFitch} variant={'default'} />
+        <CodeHighlighting data={fixErrFitch} variant={'medium'} />
       </div>
       <div className="">
         <CardWrapper>

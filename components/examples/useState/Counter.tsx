@@ -10,7 +10,7 @@ const Counter = () => {
   return (
     <div className="flex flex-col w-[90%] justify-center items-center md:flex-row  ">
       <div>
-        <CodeHighlighting data={counter} variant={'default'} />
+        <CodeHighlighting data={counter} variant={'medium'} />
       </div>
       <div className=" w-full lg:w-1/3">
         <CardWrapper>

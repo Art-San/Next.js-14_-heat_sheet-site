@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/accordion'
 
 import Title from '@/components/typografy/Title'
-import { items } from '@/lib/errorData/objData'
+import { items } from '@/lib/data/errorData/objData'
 import CodeTitle from '@/components/codeHighlighting/CodeTitle'
 
 const errorHooks = () => {

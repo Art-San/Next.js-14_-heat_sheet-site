@@ -1,15 +1,15 @@
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import {
   atomOneDark,
-  purebasic,
   androidstudio,
   agate,
-  googlecode,
-  atomOneDarkReasonable
+  docco,
+  darcula
 } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import CopyCodeButton from './CopyCodeButton'
+import { cn } from '@/lib/utils'
 
-type VariantType = 'fix' | 'error' | 'extra' | 'default' | ''
+type VariantType = 'fix' | 'error' | 'small' | 'medium' | 'large' | ''
 
 interface IData {
   data: string
@@ -23,21 +23,34 @@ interface IData {
 //   default: agate
 // }
 const styles = {
-  fix: { tema: atomOneDark, size: '12px' },
-  error: { tema: atomOneDarkReasonable, size: '12px' },
-  default: { tema: agate, size: '14px' },
-  extra: { tema: androidstudio, size: '16px' },
-  '': { tema: googlecode, size: '10px' }
+  fix: { tema: atomOneDark, font: '12px', size: 'max-w-2xl min-w-[25rem]' },
+
+  error: { tema: docco, font: '12px', size: 'max-w-2xl min-w-[25rem]' },
+
+  small: { tema: androidstudio, font: '16px', size: 'max-w-xs min-w-[18rem]' },
+
+  medium: { tema: agate, font: '14px', size: 'max-w-2xl min-w-[25rem]' },
+
+  large: { tema: androidstudio, font: '16px', size: 'max-w-2xl min-w-[25rem]' },
+
+  '': { tema: darcula, font: '14px', size: 'max-w-2xl min-w-[25rem]' }
 }
+
+// small
+// medium
+// large
 
 const CodeHighlighting = ({ data, variant }: IData) => {
   const tema = styles[variant].tema
+  const font = styles[variant].font
   const size = styles[variant].size
 
   return (
     <>
+      <div className="  max-w-xs min-w-[18rem]"></div>
       <div className="bg-gray-500 grid place-items-center">
-        <div className=" max-w-2xl min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden ">
+        <div className={cn('bg-[#3a404d] rounded-md overflow-hidden', size)}>
+          {/* <div className=" max-w-2xl min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden "> */}
           <div className=" flex justify-between px-4 text-white text-xs items-center">
             <p className=" text-xs">Example code</p>
             <p className="text-xs">{variant}</p>
@@ -49,7 +62,7 @@ const CodeHighlighting = ({ data, variant }: IData) => {
               style={tema}
               customStyle={{
                 padding: '25px',
-                fontSize: size
+                fontSize: font
               }}
               wrapLongLines={true}
             >

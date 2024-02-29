@@ -72,7 +72,7 @@ const Example4 = () => {
     <div className="flex flex-col w-[100%] justify-center items-center xl:flex-row">
       {/* <div className="flex justify-center"> */}
       <div>
-        <CodeHighlighting data={example4} variant={'default'} />
+        <CodeHighlighting data={example4} variant={'medium'} />
       </div>
       <div className="w-[100%] xl:w-1/2">
         <CardWrapper>
