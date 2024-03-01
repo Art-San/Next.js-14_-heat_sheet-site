@@ -1,3 +1,4 @@
+'use client'
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
 import CardWrapper from '@/components/common/Card'
 import SmallTitle from '@/components/typografy/SmallTitle'
@@ -13,10 +14,29 @@ import {
   TableRow
 } from '@/components/ui/table'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
-console.log('dataVariables', dataVariables[1].name)
+interface DataVariable {
+  id: number
+  slag: string
+  name: string
+  title: string
+  like: boolean
+  desc1: string
+  desc2: string
+  desc3: string
+  code1: string
+  code2: string
+  code3: string
+}
 
 const Variables = () => {
+  const [data, setData] = useState<DataVariable[]>([])
+  useEffect(() => {
+    setData(dataVariables)
+  }, [])
+
+  console.log('data', data)
   return (
     <>
       <div className="flex flex-col w-[90%] justify-center items-center lg:flex-row">
@@ -32,7 +52,7 @@ const Variables = () => {
           <CodeHighlighting data={variables.code1} variant={'small'} />
         </div>
       </div>
-      <Table>
+      <Table className=" w-2/3 mx-auto">
         <TableCaption>Список {variables.title}.</TableCaption>
         <TableHeader>
           <TableRow>
@@ -42,7 +62,20 @@ const Variables = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow>
+          {data.map((el) => (
+            <TableRow key={el.id} className=" hover:bg-slate-300">
+              <TableCell className="font-medium text-blue-600">
+                <Link href={`javascript/variables/${el.slag}`}>{el.name}</Link>
+              </TableCell>
+              <TableCell>{el.slag}</TableCell>
+              <TableCell>
+                <Link href={`javascript/variables/${el.slag}`}>
+                  {el.desc1.slice(0, 50) + '...'}
+                </Link>
+              </TableCell>
+            </TableRow>
+          ))}
+          {/* <TableRow>
             <Link href={`javascript/variables/${dataVariables[1].slag}`}>
               <TableCell className="font-medium text-blue-600">
                 {dataVariables[1].name}
@@ -50,7 +83,7 @@ const Variables = () => {
             </Link>
             <TableCell>{dataVariables[1].slag}</TableCell>
             <TableCell>{dataVariables[1].desc1}</TableCell>
-          </TableRow>
+          </TableRow> */}
         </TableBody>
       </Table>
     </>
