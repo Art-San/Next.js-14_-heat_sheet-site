@@ -3,9 +3,9 @@ import CodeHighlighting from './CodeHighlighting'
 
 interface ICodeTitle {
   id: number
-  teg: 'fix' | 'error' | 'extra' | 'default' | ''
+  teg: 'fix' | 'error' | 'small' | 'medium' | 'large' | ''
   title: string
-  code: string // Предполагая, что code - это строка. Если это не так, замените тип на соответствующий.
+  code: string
   desc1: string
   desc2: string
   desc3: string
