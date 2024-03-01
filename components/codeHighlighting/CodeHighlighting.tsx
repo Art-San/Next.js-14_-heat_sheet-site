@@ -27,7 +27,7 @@ const styles = {
 
   error: { tema: docco, font: '12px', size: 'max-w-2xl min-w-[25rem]' },
 
-  small: { tema: androidstudio, font: '16px', size: 'max-w-xs min-w-[18rem]' },
+  small: { tema: androidstudio, font: '15px', size: 'max-w-xs min-w-[18rem]' },
 
   medium: { tema: agate, font: '14px', size: 'max-w-2xl min-w-[25rem]' },
 
@@ -50,7 +50,6 @@ const CodeHighlighting = ({ data, variant }: IData) => {
       <div className="  max-w-xs min-w-[18rem]"></div>
       <div className="bg-gray-500 grid place-items-center">
         <div className={cn('bg-[#3a404d] rounded-md overflow-hidden', size)}>
-          {/* <div className=" max-w-2xl min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden "> */}
           <div className=" flex justify-between px-4 text-white text-xs items-center">
             <p className=" text-xs">Example code</p>
             <p className="text-xs">{variant}</p>
