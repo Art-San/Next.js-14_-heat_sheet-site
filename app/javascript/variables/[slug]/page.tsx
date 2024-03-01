@@ -6,7 +6,7 @@ interface IProps {
 
 const VariablesPage = ({ params }: IProps) => {
   const { slug } = params
-  console.log('params', params) // params {id: 23}
+  console.log('params', slug) // params {id: 23}
   return <div>PostPage-ID - {slug}-</div>
 }
 

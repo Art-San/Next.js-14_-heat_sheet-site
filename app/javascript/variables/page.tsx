@@ -18,7 +18,7 @@ import { useEffect, useState } from 'react'
 
 interface DataVariable {
   id: number
-  slag: string
+  slug: string
   name: string
   title: string
   like: boolean
@@ -52,12 +52,12 @@ const Variables = () => {
           <CodeHighlighting data={variables.code1} variant={'small'} />
         </div>
       </div>
-      <Table className=" w-2/3 mx-auto">
+      <Table className=" w-[80%] lg:w-2/3 mx-auto mt-8">
         <TableCaption>Список {variables.title}.</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">Name</TableHead>
-            <TableHead>Slag</TableHead>
+            <TableHead>Slug</TableHead>
             <TableHead>Desc1</TableHead>
           </TableRow>
         </TableHeader>
@@ -65,25 +65,16 @@ const Variables = () => {
           {data.map((el) => (
             <TableRow key={el.id} className=" hover:bg-slate-300">
               <TableCell className="font-medium text-blue-600">
-                <Link href={`javascript/variables/${el.slag}`}>{el.name}</Link>
+                <Link href={`variables/${el.slug}`}>{el.name}</Link>
               </TableCell>
-              <TableCell>{el.slag}</TableCell>
+              <TableCell>{el.slug}</TableCell>
               <TableCell>
-                <Link href={`javascript/variables/${el.slag}`}>
+                <Link href={`variables/${el.slug}`}>
                   {el.desc1.slice(0, 50) + '...'}
                 </Link>
               </TableCell>
             </TableRow>
           ))}
-          {/* <TableRow>
-            <Link href={`javascript/variables/${dataVariables[1].slag}`}>
-              <TableCell className="font-medium text-blue-600">
-                {dataVariables[1].name}
-              </TableCell>
-            </Link>
-            <TableCell>{dataVariables[1].slag}</TableCell>
-            <TableCell>{dataVariables[1].desc1}</TableCell>
-          </TableRow> */}
         </TableBody>
       </Table>
     </>

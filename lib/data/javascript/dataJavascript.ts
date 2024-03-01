@@ -1,7 +1,7 @@
 export const dataVariables = [
   {
     id: 1,
-    slag: 'let',
+    slug: 'let',
     name: 'Let',
     title: 'Let',
     like: false,
@@ -30,7 +30,7 @@ export const dataVariables = [
   },
   {
     id: 2,
-    slag: 'const',
+    slug: 'const',
     name: 'Const',
     title: 'Const',
     like: false,
@@ -47,7 +47,7 @@ export const dataVariables = [
   },
   {
     id: 3,
-    slag: 'var',
+    slug: 'var',
     name: 'Var',
     title: 'Var',
     like: false,
@@ -62,7 +62,7 @@ export const dataVariables = [
   }
   //   {
   //     id: 4,
-  //     slag: 'const',
+  //     slug: 'const',
   //     title: 'Const',
   //     like: false,
   //     desc1: '',
@@ -74,7 +74,7 @@ export const dataVariables = [
   //   },
   //   {
   //     id: 5,
-  //     slag: 'var',
+  //     slug: 'var',
   //     title: 'Var',
   //     like: false,
   //     desc1: '',
@@ -88,7 +88,7 @@ export const dataVariables = [
 
 export const variables = {
   id: 2,
-  slag: 'variables',
+  slug: 'variables',
   name: 'Variables',
   title: 'Variables',
   like: false,
