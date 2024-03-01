@@ -2,6 +2,7 @@ export const dataVariables = [
   {
     id: 1,
     slug: 'let',
+    tags: ['variables'],
     name: 'Let',
     title: 'Let',
     like: false,
@@ -31,10 +32,11 @@ export const dataVariables = [
   {
     id: 2,
     slug: 'const',
+    tags: ['variables'],
     name: 'Const',
     title: 'Const',
     like: false,
-    desc1: 'Ключевое слово для объявления констант.',
+    desc1: '"Const" - ключевое слово для объявления констант.',
     desc2: 'Константы не могут быть переопределены после их инициализации.',
     desc3: 'Используется для хранения значений, которые не должны изменяться.',
     code1: `const PI = 3.14159;
@@ -48,10 +50,11 @@ export const dataVariables = [
   {
     id: 3,
     slug: 'var',
+    tags: ['variables'],
     name: 'Var',
     title: 'Var',
     like: false,
-    desc1: 'Ключевое слово для объявления переменных.',
+    desc1: '"Var" - ключевое слово для объявления переменных.',
     desc2: 'Переменные объявленные с "var" доступны в любой части кода.',
     desc3: 'Используется для хранения значений, которые могут изменяться.',
     code1: `var x = 10;
@@ -60,35 +63,12 @@ export const dataVariables = [
       console.log(name);`,
     code3: ``
   }
-  //   {
-  //     id: 4,
-  //     slug: 'const',
-  //     title: 'Const',
-  //     like: false,
-  //     desc1: '',
-  //     desc2: '',
-  //     desc3: '',
-  //     code1: ``,
-  //     code2: ``,
-  //     code3: ``
-  //   },
-  //   {
-  //     id: 5,
-  //     slug: 'var',
-  //     title: 'Var',
-  //     like: false,
-  //     desc1: '',
-  //     desc2: '',
-  //     desc3: '',
-  //     code1: ``,
-  //     code2: ``,
-  //     code3: ``
-  //   }
 ]
 
 export const variables = {
   id: 2,
   slug: 'variables',
+  tags: ['let', 'const', 'var'],
   name: 'Variables',
   title: 'Variables',
   like: false,
