@@ -58,7 +58,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function NavigationMenuDemo() {
   return (
-    <div className=" flex bg-slate-500 h-16 items-center justify-center gap-y-5 fixed w-full top-0">
+    <div className=" flex bg-slate-500 h-16 items-center justify-center gap-y-5 fixed w-full top-0 z-10">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>

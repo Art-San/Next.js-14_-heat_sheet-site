@@ -45,6 +45,7 @@ const CodeHighlighting = ({ data, variant }: IData) => {
   const font = styles[variant].font
   const size = styles[variant].size
 
+  if (data === '') return null
   return (
     <>
       <div className="  max-w-xs min-w-[18rem]"></div>

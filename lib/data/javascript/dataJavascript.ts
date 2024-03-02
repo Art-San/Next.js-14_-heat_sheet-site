@@ -1,6 +1,8 @@
 export const dataVariables = [
   {
     id: 1,
+    subject: 'javascript',
+    chapter: 'variables',
     slug: 'let',
     tags: ['variables'],
     name: 'Let',
@@ -31,6 +33,8 @@ export const dataVariables = [
   },
   {
     id: 2,
+    subject: 'javascript',
+    chapter: 'variables',
     slug: 'const',
     tags: ['variables'],
     name: 'Const',
@@ -49,6 +53,8 @@ export const dataVariables = [
   },
   {
     id: 3,
+    subject: 'javascript',
+    chapter: 'variables',
     slug: 'var',
     tags: ['variables'],
     name: 'Var',
@@ -67,6 +73,7 @@ export const dataVariables = [
 
 export const variables = {
   id: 2,
+  subject: 'javascript',
   slug: 'variables',
   tags: ['let', 'const', 'var'],
   name: 'Variables',
