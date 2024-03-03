@@ -249,7 +249,7 @@ export const dataTypes = [
 ]
 
 export const types = {
-  id: 2,
+  id: 3,
   subject: 'javascript',
   slug: 'data-types',
   tags: [
