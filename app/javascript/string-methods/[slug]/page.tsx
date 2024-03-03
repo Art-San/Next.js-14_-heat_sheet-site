@@ -2,7 +2,7 @@ import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
 import CardWrapper from '@/components/common/Card'
 import SmallTitle from '@/components/typografy/SmallTitle'
 import { Separator } from '@/components/ui/separator'
-import { dataArrayMethods } from '@/lib/data/javascript/data.array-methods'
+import { dataStringMethods } from '@/lib/data/javascript/data.string-methods'
 
 interface IProps {
   params: {
@@ -11,15 +11,15 @@ interface IProps {
 }
 
 export function generateStaticParams() {
-  return dataArrayMethods.map((el) => ({
+  return dataStringMethods.map((el) => ({
     slug: el.slug
   }))
 }
 
-const ArrayMethodPage = ({ params }: IProps) => {
+const StringMethodPage = ({ params }: IProps) => {
   const { slug } = params
 
-  const method = dataArrayMethods.find((el) => {
+  const method = dataStringMethods.find((el) => {
     return el.slug === slug
   })
 
@@ -47,4 +47,4 @@ const ArrayMethodPage = ({ params }: IProps) => {
   )
 }
 
-export default ArrayMethodPage
+export default StringMethodPage
