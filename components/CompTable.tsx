@@ -12,7 +12,7 @@ import { ThumbsDown, ThumbsUp } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-interface IDataVariable {
+export interface IData {
   id: number
   subject: string // 👍
   chapter: string
@@ -30,11 +30,11 @@ interface IDataVariable {
 }
 
 interface ICompTableProps {
-  arr: IDataVariable[]
+  arr: IData[]
 }
 
 const CompTable = ({ arr }: ICompTableProps) => {
-  const [data, setData] = useState<IDataVariable[]>([])
+  const [data, setData] = useState<IData[]>([])
   useEffect(() => {
     setData(arr)
   }, [arr])
@@ -58,7 +58,7 @@ const CompTable = ({ arr }: ICompTableProps) => {
             </TableCell>
             <TableCell>{el.slug}</TableCell>
             <TableCell>
-              <Link href={`variables/${el.slug}`}>
+              <Link href={`${el.chapter}/${el.slug}`}>
                 {el.desc1.slice(0, 50) + '...'}
               </Link>
             </TableCell>

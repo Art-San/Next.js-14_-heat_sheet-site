@@ -1,3 +1,4 @@
+import { IData } from '@/components/CompTable'
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
 import CardWrapper from '@/components/common/Card'
 import SmallTitle from '@/components/typografy/SmallTitle'
@@ -10,9 +11,14 @@ interface IProps {
   }
 }
 
+export function generateStaticParams() {
+  return dataTypes.map((el) => ({
+    slug: el.slug
+  }))
+}
+
 const DatatypePage = ({ params }: IProps) => {
   const { slug } = params
-  console.log('DatatypePage slug', slug)
   const variable = dataTypes.find((el) => {
     return el.slug === slug
   })

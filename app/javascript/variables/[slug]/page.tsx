@@ -10,6 +10,12 @@ interface IProps {
   }
 }
 
+export function generateStaticParams() {
+  return dataVariables.map((el) => ({
+    slug: el.slug
+  }))
+}
+
 const VariablesPage = ({ params }: IProps) => {
   const { slug } = params
   const variable = dataVariables.find((el) => {
