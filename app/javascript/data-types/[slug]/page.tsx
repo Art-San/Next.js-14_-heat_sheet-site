@@ -19,7 +19,7 @@ export function generateStaticParams() {
 
 const DatatypePage = ({ params }: IProps) => {
   const { slug } = params
-  const variable = dataTypes.find((el) => {
+  const type = dataTypes.find((el) => {
     return el.slug === slug
   })
 
@@ -29,20 +29,20 @@ const DatatypePage = ({ params }: IProps) => {
       <div className="flex flex-col items-center justify-center lg:flex-row">
         <div className="flex flex-col mb-auto w-[100%] lg:w-1/2">
           <CardWrapper>
-            <SmallTitle>{variable?.title}</SmallTitle>
-            <h3 className=" text-base ">{variable?.desc1}</h3>
-            <h3 className=" text-base ">{variable?.desc2}</h3>
-            <h3 className=" text-base ">{variable?.desc3}</h3>
+            <SmallTitle>{type?.title}</SmallTitle>
+            <h3 className=" text-base ">{type?.desc1}</h3>
+            <h3 className=" text-base ">{type?.desc2}</h3>
+            <h3 className=" text-base ">{type?.desc3}</h3>
             <Separator className="mt-4  bg-slate-300" />
           </CardWrapper>
         </div>
         <div className="">
-          <CodeHighlighting data={variable?.code1 ?? ''} variant={'medium'} />
+          <CodeHighlighting data={type?.code1 ?? ''} variant={'medium'} />
         </div>
       </div>
 
       <div className=" w-fit">
-        <CodeHighlighting data={variable?.code2 ?? ''} variant={'medium'} />
+        <CodeHighlighting data={type?.code2 ?? ''} variant={'medium'} />
       </div>
     </div>
   )

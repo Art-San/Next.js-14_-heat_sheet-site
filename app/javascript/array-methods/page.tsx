@@ -3,7 +3,10 @@ import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
 import CardWrapper from '@/components/common/Card'
 import SmallTitle from '@/components/typografy/SmallTitle'
 import { Separator } from '@/components/ui/separator'
-import { arrayMethods } from '@/lib/data/javascript/data.array-methods'
+import {
+  arrayMethods,
+  dataArrayMethods
+} from '@/lib/data/javascript/data.array-methods'
 
 const ArrayMethods = () => {
   return (
@@ -19,7 +22,7 @@ const ArrayMethods = () => {
           </CardWrapper>
         </div>
         <div className="flex items-center flex-col xl:flex-row w-full">
-          {/* <CompTable arr={dataTypes} /> */}
+          <CompTable arr={dataArrayMethods} />
 
           <div className="">
             <CodeHighlighting data={arrayMethods.code1} variant={'small'} />
