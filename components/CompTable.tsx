@@ -52,7 +52,7 @@ const CompTable = ({ arr }: ICompTableProps) => {
       </TableHeader>
       <TableBody>
         {data.map((el) => (
-          <TableRow key={el.id} className=" hover:bg-slate-300">
+          <TableRow key={el.id} className=" hover:bg-slate-200">
             <TableCell className="font-medium text-blue-600">
               <Link href={`${el.chapter}/${el.slug}`}>{el.name}</Link>
             </TableCell>

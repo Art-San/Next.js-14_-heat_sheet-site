@@ -1,4 +1,5 @@
-import { IData } from '@/components/CompTable'
+// import CompTable, { IData } from '@/components/CompTable'
+import NavigationButtons from '@/components/buttons/NavigationButtons'
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
 import CardWrapper from '@/components/common/Card'
 import SmallTitle from '@/components/typografy/SmallTitle'
@@ -19,12 +20,19 @@ export function generateStaticParams() {
 
 const DatatypePage = ({ params }: IProps) => {
   const { slug } = params
+
+  const currentIndex = dataTypes.findIndex((item) => item.slug === slug)
+  const nextMethod = dataTypes[currentIndex + 1]
+
+  const noCurrent = dataTypes.filter((el) => el.slug !== slug)
+
   const type = dataTypes.find((el) => {
     return el.slug === slug
   })
 
   return (
     <div className="flex  flex-col items-center">
+      <NavigationButtons path={nextMethod?.slug} />
       {/* <div className="flex flex-col w-[90%] justify-center items-center lg:flex-row"> */}
       <div className="flex flex-col items-center justify-center lg:flex-row">
         <div className="flex flex-col mb-auto w-[100%] lg:w-1/2">
@@ -44,6 +52,7 @@ const DatatypePage = ({ params }: IProps) => {
       <div className=" w-fit">
         <CodeHighlighting data={type?.code2 ?? ''} variant={'medium'} />
       </div>
+      {/* <CompTable arr={noCurrent} /> */}
     </div>
   )
 }

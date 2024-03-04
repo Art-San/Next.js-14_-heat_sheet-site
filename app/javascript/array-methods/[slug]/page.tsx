@@ -1,3 +1,5 @@
+// import CompTable from '@/components/CompTable'
+import NavigationButtons from '@/components/buttons/NavigationButtons'
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
 import CardWrapper from '@/components/common/Card'
 import SmallTitle from '@/components/typografy/SmallTitle'
@@ -19,12 +21,18 @@ export function generateStaticParams() {
 const ArrayMethodPage = ({ params }: IProps) => {
   const { slug } = params
 
+  const currentIndex = dataArrayMethods.findIndex((item) => item.slug === slug)
+  const nextMethod = dataArrayMethods[currentIndex + 1]
+
+  const noCurrent = dataArrayMethods.filter((el) => el.slug !== slug)
+
   const method = dataArrayMethods.find((el) => {
     return el.slug === slug
   })
 
   return (
     <div className="flex  flex-col items-center">
+      <NavigationButtons path={nextMethod?.slug} />
       <div className="flex flex-col items-center justify-center lg:flex-row">
         <div className="flex flex-col mb-auto w-[100%] lg:w-1/2">
           <CardWrapper>
@@ -43,6 +51,7 @@ const ArrayMethodPage = ({ params }: IProps) => {
       <div className=" w-fit">
         <CodeHighlighting data={method?.code2 ?? ''} variant={'medium'} />
       </div>
+      {/* <CompTable arr={noCurrent} /> */}
     </div>
   )
 }

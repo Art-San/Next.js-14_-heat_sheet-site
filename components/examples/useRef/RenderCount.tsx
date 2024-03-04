@@ -25,7 +25,7 @@ const RenderCountExample = () => {
             Render count: {renderCount.current}
           </p>
           <Button
-            size={'costom'}
+            size={'custom'}
             variant={'positive'}
             onClick={toggleOtherState}
           >

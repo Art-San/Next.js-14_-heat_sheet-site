@@ -17,10 +17,10 @@ const CounterButtons = () => {
   return (
     <div className=" flex flex-col w-[90%]">
       <p className="text-red-600 font-semibold">Count: {count}</p>
-      <Button size={'costom'} className=" bg-red-600" onClick={handleIncrement}>
+      <Button size={'custom'} className=" bg-red-600" onClick={handleIncrement}>
         плюс
       </Button>
-      <Button size={'costom'} variant={'positive'} onClick={handleDecrement}>
+      <Button size={'custom'} variant={'positive'} onClick={handleDecrement}>
         минус
       </Button>
     </div>

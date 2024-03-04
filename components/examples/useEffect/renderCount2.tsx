@@ -24,7 +24,7 @@ const RenderCountExample2 = () => {
             </p>
             <Button
               className=" tracking-tight"
-              size={'costom'}
+              size={'custom'}
               variant={'positive'}
               onClick={handleRender}
             >
