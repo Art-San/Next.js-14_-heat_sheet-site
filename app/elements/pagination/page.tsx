@@ -27,7 +27,7 @@ const PaginationPage = () => {
       </Accordion>
 
       <div className="flex flex-col ">
-        <Subtitle>Примеры</Subtitle>
+        <Subtitle>Пример</Subtitle>
         <div className="flex flex-col items-center">
           <Pagination />
         </div>
