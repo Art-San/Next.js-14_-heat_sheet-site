@@ -1,10 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-// import SheetLeft from '@/components/sheet/SheetLeft'
 import { NavigationMenuDemo } from '@/components/NavigationMenuDemo'
-// import Navbar from '@/components/Navbar'
-// import SidebarMenu from '@/components/sidebar/SidebarMenu'
+import ReactQueryProvider from '@/utils/ReactQueryProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,14 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <SheetLeft /> */}
-        <NavigationMenuDemo />
-        {/* <Navbar /> */}
-        {/* <SidebarMenu /> */}
-        <div className=" flex flex-col items-center mt-20 mx-auto w-[90%] md:w-[80%] lg:w-[70%] xl:w-[1140px]">
-          {/* <div className=" flex flex-col items-center mt-20 mx-auto w-[90%] md:w-[80%] lg:w-[70%] xl:w-[1140px]"> */}
-          {children}
-        </div>
+        <ReactQueryProvider>
+          <NavigationMenuDemo />
+          <div className=" flex flex-col items-center mt-20 mx-auto w-[90%] md:w-[80%] lg:w-[70%] xl:w-[1140px]">
+            {children}
+          </div>
+        </ReactQueryProvider>
       </body>
     </html>
   )
