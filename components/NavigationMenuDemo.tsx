@@ -132,6 +132,14 @@ export function NavigationMenuDemo() {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Элементы</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                <SheetLeft />
+              </div>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
           {/* <NavigationMenuItem>
             <NavigationMenuTrigger>Методы</NavigationMenuTrigger>
             <NavigationMenuContent>
