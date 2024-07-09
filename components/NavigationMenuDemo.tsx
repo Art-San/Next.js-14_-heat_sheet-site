@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/navigation-menu'
 import SheetLeft from './sheet/SheetLeft'
 import { jSPointsMenu } from '@/constants/jSPoints'
+import { elementsPointsMenu } from '@/constants/elementsPoints'
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -135,9 +136,17 @@ export function NavigationMenuDemo() {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Элементы</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                <SheetLeft />
-              </div>
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                {elementsPointsMenu.map((component) => (
+                  <ListItem
+                    key={component.title}
+                    title={component.title}
+                    href={component.href}
+                  >
+                    {component.description}
+                  </ListItem>
+                ))}
+              </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
           {/* <NavigationMenuItem>
