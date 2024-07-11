@@ -15,6 +15,14 @@ import Subtitle from '@/components/typografy/Subtitle'
 
 import RenderCountExample2 from '@/components/examples/useEffect/renderCount2'
 import PrevStateExample from '@/components/examples/useRef/PrevStateExample'
+import Example from '@/components/examples/useEffect/example'
+
+const text = `useEffect(() => {})`
+const text1 = `useEffect(() => {}, [])`
+const text2 = `useEffect(() => {}, [dev1, dev2])`
+const text3 = `useEffect(() => {
+  return () => {}
+}, [dev1, dev2])`
 
 const useEffect = () => {
   return (
@@ -33,38 +41,39 @@ const useEffect = () => {
               <AccordionContent className="text-[18px]">
                 <div className=" flex flex-col gap-3">
                   <p>
+                    Первым параметром useEffect принимается функцию Effect-а,
+                    которая вызывается после монтирования компонента и каждый
+                    раз после изменения в массиве зависимостей.
+                  </p>
+                  <p>
+                    Функция эффекта может вернуть функцию очистки, которая
+                    сработает перед следующим срабатыванием эффекта и толь в
+                    самом конце, перед тем как компонент размонтируется
+                  </p>
+
+                  <p>
                     <code>useEffect</code> помогает отслеживать рендеры нашего
                     приложения. В момент рендера он вызовет переданный ему{' '}
                     <code>callback</code>. useEffect() может срабатывать при:
                     каждом ререндере компонента. первом рендере. изменении
                     какой-то зависимости. Демонтаже компонента.
                   </p>
+
                   <p>
-                    <code className=" text-orange-700 text-xl">
-                      useEffect(() {}){' '}
-                    </code>{' '}
-                    При каждом ререндере
+                    <code className=" text-orange-700 text-xl">{text}</code> При
+                    каждом ререндере
                   </p>
                   <p>
-                    <code className=" text-orange-700 text-xl">
-                      {' '}
-                      useEffect(() {}, []){' '}
-                    </code>{' '}
+                    <code className=" text-orange-700 text-xl">{text1}</code>{' '}
                     При первом рендере
                   </p>
                   <p>
-                    <code className=" text-orange-700 text-xl">
-                      {' '}
-                      useEffect(() {}, [someProps1, someProps1]){' '}
-                    </code>{' '}
-                    При изменении зависимостей someProps1, someProps1
+                    <code className=" text-orange-700 text-xl">{text2}</code>{' '}
+                    При изменении зависимостей dev1, dev2
                   </p>
                   <p>
-                    {' '}
-                    <code className=" text-orange-700 text-xl">
-                      useEffect(() return ())
-                    </code>{' '}
-                    вызовется при демонтаже компонента{' '}
+                    <code className=" text-orange-700 text-xl">{text3}</code>{' '}
+                    вызовется при демонтаже компонента
                   </p>
                 </div>
               </AccordionContent>
@@ -76,8 +85,9 @@ const useEffect = () => {
       <div className="flex flex-col items-center w-[1120px] mx-auto">
         <Subtitle>Примеры</Subtitle>
         <div className=" flex flex-col">
-          {/* <RenderCountExample2 /> */}
-          {/* <PrevStateExample /> */}
+          <Example />
+          <RenderCountExample2 />
+          <PrevStateExample />
         </div>
       </div>
     </>
