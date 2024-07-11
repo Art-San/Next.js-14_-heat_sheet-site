@@ -45,21 +45,68 @@ const ListProducts = () => {
   if (!data) {
     return <div className=" ">Нет данных</div>
   }
+  const handlePageClick = (pageNumber: number) => {
+    setPage(pageNumber)
+  }
 
-  console.log(123, data)
+  const totalPages = Math.ceil(data?.total / data?.limit)
+
+  const showEllipsisBefore = totalPages > 3
+  const showEllipsisAfter = totalPages > 3
+  const pagesArray = Array.from({ length: totalPages }, (_, i) => i)
+
   return (
     <>
       {data &&
         data.products.map((product) => (
           <h3 key={product.id}>{product.title}</h3>
         ))}
-      <div className=" flex justify-between">
+      <div className="flex justify-between">
         <Button onClick={() => setPage((p: number) => p - 1)} disabled={!page}>
           Назад
         </Button>
+        {showEllipsisBefore && <span>...</span>}
+        {pagesArray.slice(0, 3).map((pageNumber) => (
+          <Button
+            key={pageNumber}
+            onClick={() => handlePageClick(pageNumber)}
+            disabled={page === pageNumber}
+          >
+            {pageNumber + 1}
+          </Button>
+        ))}
+        {showEllipsisAfter && <span>...</span>}
+        {pagesArray.length > 3 && (
+          <Button
+            onClick={() => handlePageClick(pagesArray[pagesArray.length - 1])}
+          >
+            {pagesArray[pagesArray.length - 1] + 1}
+          </Button>
+        )}
         <Button onClick={() => setPage((p: number) => p + 1)}>Далее</Button>
       </div>
     </>
+    // <>
+    //   {data &&
+    //     data.products.map((product) => (
+    //       <h3 key={product.id}>{product.title}</h3>
+    //     ))}
+    //   <div className=" flex justify-between">
+    //     <Button onClick={() => setPage((p: number) => p - 1)} disabled={!page}>
+    //       Назад
+    //     </Button>
+    //     {pagesArray.map((pageNumber) => (
+    //       <Button
+    //         key={pageNumber}
+    //         onClick={() => handlePageClick(pageNumber)}
+    //         disabled={page === pageNumber}
+    //       >
+    //         {pageNumber + 1}
+    //       </Button>
+    //     ))}
+    //     <Button onClick={() => setPage((p: number) => p + 1)}>Далее</Button>
+    //   </div>
+    // </>
   )
 }
 
