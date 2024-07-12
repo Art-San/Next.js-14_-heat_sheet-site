@@ -86,8 +86,8 @@ const useEffect = () => {
         <Subtitle>Примеры</Subtitle>
         <div className=" flex flex-col">
           <Example />
-          <RenderCountExample2 />
-          <PrevStateExample />
+          {/* <RenderCountExample2 /> */}
+          {/* <PrevStateExample /> */}
         </div>
       </div>
     </>
