@@ -12,10 +12,11 @@ import {
   AccordionTrigger
 } from '@/components/ui/accordion'
 import Subtitle from '@/components/typografy/Subtitle'
+import UsersList from '@/components/examples/useEffect/UsersList'
 
-import RenderCountExample2 from '@/components/examples/useEffect/renderCount2'
-import PrevStateExample from '@/components/examples/useRef/PrevStateExample'
-import Example from '@/components/examples/useEffect/example'
+// import RenderCountExample2 from '@/components/examples/useEffect/RenderCount2'
+// import PrevStateExample from '@/components/examples/useRef/PrevStateExample'
+// import Example from '@/components/examples/useEffect/Example'
 
 const text = `useEffect(() => {})`
 const text1 = `useEffect(() => {}, [])`
@@ -85,7 +86,8 @@ const useEffect = () => {
       <div className="flex flex-col items-center w-[1120px] mx-auto">
         <Subtitle>Примеры</Subtitle>
         <div className=" flex flex-col">
-          <Example />
+          <UsersList />
+          {/* <Example /> */}
           {/* <RenderCountExample2 /> */}
           {/* <PrevStateExample /> */}
         </div>
