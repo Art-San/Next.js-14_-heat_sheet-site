@@ -1,8 +1,3 @@
-// const UseEffectPage = () => {
-//   return <div>UseEffectPage</div>
-// }
-// export default UseEffectPage
-
 import Title from '@/components/typografy/Title'
 import React from 'react'
 import {
@@ -12,6 +7,7 @@ import {
   AccordionTrigger
 } from '@/components/ui/accordion'
 import Subtitle from '@/components/typografy/Subtitle'
+import RenderCountExample_1 from '@/components/examples/useEffect/RenderCountExample_1'
 import UsersList from '@/components/examples/useEffect/UsersList'
 
 // import RenderCountExample2 from '@/components/examples/useEffect/RenderCount2'
@@ -83,11 +79,11 @@ const useEffect = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center w-[1120px] mx-auto">
+      <div className="flex flex-col items-center w-[1120px] mx-auto gap-4">
         <Subtitle>Примеры</Subtitle>
         <div className=" flex flex-col">
+          <RenderCountExample_1 />
           <UsersList />
-          {/* <Example /> */}
           {/* <RenderCountExample2 /> */}
           {/* <PrevStateExample /> */}
         </div>

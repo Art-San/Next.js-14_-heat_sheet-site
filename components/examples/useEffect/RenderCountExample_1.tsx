@@ -1,10 +1,17 @@
 'use client'
 import { Button } from '@/components/ui/button'
-import { FC, useEffect, useLayoutEffect, useState } from 'react'
-import Button1 from './Button'
+import { useEffect, useLayoutEffect, useState } from 'react'
+
 import React from 'react'
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
-import { first } from '@/lib/data/hooks/data'
+import { renderCount_1 } from '@/lib/data/hooks/useEffect/data'
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/ui/accordion'
 
 function But(): React.ReactElement {
   const [counter, setCounter] = useState(0)
@@ -27,19 +34,28 @@ function But(): React.ReactElement {
   return <Button onClick={increment}>increment {counter}</Button>
 }
 
-const Example = () => {
+const RenderCountExample_1 = () => {
   const [showButton, setShowButton] = useState(true)
   return (
-    <div className="flex flex-col gap-2">
-      <div className="flex gap-2">
+    <div className="flex flex-col gap-2 w-[35rem]">
+      <h1 className=" text-lg font-semibold text-blue-400">Счетчик</h1>
+      <div className="flex  justify-between gap-2">
         <Button onClick={() => setShowButton((s) => !s)}>toggle</Button>
         {showButton && <But />}
       </div>
-      <div className="">
-        <CodeHighlighting data={first} variant={'medium'} />
-      </div>
+
+      <Accordion type="single" collapsible className="">
+        <AccordionItem value="item-1">
+          <AccordionTrigger className=" flex text-[24px] justify-center">
+            код
+          </AccordionTrigger>
+          <AccordionContent className="text-[18px] ">
+            <CodeHighlighting data={renderCount_1} variant={'medium'} />
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </div>
   )
 }
 
-export default Example
+export default RenderCountExample_1
