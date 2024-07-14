@@ -12,10 +12,6 @@ import UsersList from '@/components/examples/useEffect/UsersList'
 import RenderCountExample_2 from '@/components/examples/useEffect/RenderCountExample_2'
 import PrevStateExample from '@/components/examples/useRef/PrevStateExample'
 
-// import RenderCountExample2 from '@/components/examples/useEffect/RenderCount2'
-// import PrevStateExample from '@/components/examples/useRef/PrevStateExample'
-// import Example from '@/components/examples/useEffect/Example'
-
 const text = `useEffect(() => {})`
 const text1 = `useEffect(() => {}, [])`
 const text2 = `useEffect(() => {}, [dev1, dev2])`
