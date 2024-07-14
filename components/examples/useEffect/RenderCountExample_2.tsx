@@ -4,8 +4,16 @@ import CardWrapper from '../../common/Card'
 import SmallTitle from '@/components/typografy/SmallTitle'
 import { Button } from '@/components/ui/button'
 import ImageModal from '@/components/ImageModal'
+import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
+import { renderCount_2 } from '@/lib/data/hooks/useEffect/data'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/ui/accordion'
 
-const RenderCountExample2 = () => {
+const RenderCountExample_2 = () => {
   const [renderCount, setRenderCount] = useState(0)
   useEffect(() => {
     setRenderCount((prevState) => prevState + 1)
@@ -14,8 +22,8 @@ const RenderCountExample2 = () => {
     console.log('someRef')
   }
   return (
-    <div className="flex items-center justify-center">
-      <div className="flex px-[50px] py-[10px] w-full justify-center">
+    <div className="">
+      <div className="flex">
         <CardWrapper>
           <SmallTitle>Подсчет количества рендеров</SmallTitle>
           <div className=" flex flex-col gap-1 m-2 items-center">
@@ -35,15 +43,26 @@ const RenderCountExample2 = () => {
             </h6>
           </div>
         </CardWrapper>
+        <div>
+          <ImageModal
+            path="/images/useEffect_RenderCountExample2.png"
+            path500="/images/useState_500.png"
+          />
+        </div>
       </div>
-      <div>
-        <ImageModal
-          path="/images/useEffect_RenderCountExample2.png"
-          path500="/images/useState_500.png"
-        />
-      </div>
+
+      <Accordion type="single" collapsible className="">
+        <AccordionItem value="item-1">
+          <AccordionTrigger className=" flex text-[24px] justify-center">
+            код
+          </AccordionTrigger>
+          <AccordionContent className="text-[18px] ">
+            <CodeHighlighting data={renderCount_2} variant={'medium'} />
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </div>
   )
 }
 
-export default RenderCountExample2
+export default RenderCountExample_2

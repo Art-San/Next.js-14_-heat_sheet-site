@@ -9,6 +9,8 @@ import {
 import Subtitle from '@/components/typografy/Subtitle'
 import RenderCountExample_1 from '@/components/examples/useEffect/RenderCountExample_1'
 import UsersList from '@/components/examples/useEffect/UsersList'
+import RenderCountExample_2 from '@/components/examples/useEffect/RenderCountExample_2'
+import PrevStateExample from '@/components/examples/useRef/PrevStateExample'
 
 // import RenderCountExample2 from '@/components/examples/useEffect/RenderCount2'
 // import PrevStateExample from '@/components/examples/useRef/PrevStateExample'
@@ -82,10 +84,10 @@ const useEffect = () => {
       <div className="flex flex-col items-center w-[1120px] mx-auto gap-4">
         <Subtitle>Примеры</Subtitle>
         <div className=" flex flex-col">
+          <PrevStateExample />
+          <RenderCountExample_2 />
           <RenderCountExample_1 />
           <UsersList />
-          {/* <RenderCountExample2 /> */}
-          {/* <PrevStateExample /> */}
         </div>
       </div>
     </>

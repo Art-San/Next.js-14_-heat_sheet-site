@@ -48,7 +48,7 @@ const CodeHighlighting = ({ data, variant }: IData) => {
   if (data === '') return null
   return (
     <>
-      <div className="  max-w-xs min-w-[18rem]"></div>
+      {/* <div className="  max-w-xs min-w-[18rem]"></div> */}
       <div className="bg-gray-500 grid place-items-center">
         <div className={cn('bg-[#3a404d] rounded-md overflow-hidden', size)}>
           <div className=" flex justify-between px-4 text-white text-xs items-center">

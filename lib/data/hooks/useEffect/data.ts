@@ -36,6 +36,84 @@ const Example = () => {
 
 export default Example`
 
+export const renderCount_2 = `import React, { useState, useEffect } from 'react'
+import CardWrapper from '../../common/Card'
+import SmallTitle from '@/components/typografy/SmallTitle'
+
+const RenderCountExample_2 = () => {
+  const [renderCount, setRenderCount] = useState(0)
+
+  useEffect(() => {
+    setRenderCount((prevState) => prevState + 1)
+  }, [])
+
+  const handleRender = () => {
+    console.log('someRef')
+  }
+  return (
+    <div className="w-[270px]">
+      <div className="">
+        <CardWrapper>
+          <SmallTitle>Подсчет рендеров</SmallTitle>
+          <div className=" flex flex-col gap-1 m-2 items-center">
+            <p className="text-red-600 font-semibold">
+              render count: {renderCount}
+            </p>
+            <button className=" px-2 py-1 bg-slate-500" onClick={handleRender}>
+              жмык
+            </button>
+          </div>
+        </CardWrapper>
+      </div>
+    </div>
+  )
+}
+
+export default RenderCountExample_2`
+
+export const prevState_1 = `'use client'
+import React, { useRef, useState, useEffect } from 'react'
+import CardWrapper from '../../common/Card'
+import SmallTitle from '@/components/typografy/SmallTitle'
+import { Button } from '@/components/ui/button'
+
+const PrevStateExample = () => {
+  const prevState = useRef('')
+  const [otherState, setOtherState] = useState('false')
+  const toggleOtherState = () => {
+    setOtherState((prevState) => (prevState === 'false' ? 'true' : 'false'))
+  }
+
+  useEffect(() => {
+    prevState.current = otherState
+  }, [otherState])
+
+  return (
+    <div className="flex  justify-center gap-2">
+      <div className="flex gap-5 items-center">
+        <CardWrapper>
+          <SmallTitle>Предыдущее состояние</SmallTitle>
+          <div className=" flex flex-col gap-1 m-2 items-center">
+            <p className="font-bold text-gray-800">
+              Prev State:{' '}
+              <span className=" text-red-700">{prevState.current}</span>
+            </p>
+            <p className="font-bold text-gray-800">
+              Corrent State: <span className="text-blue-700">{otherState}</span>
+            </p>
+            <Button variant={'positive'} size={'sm'} onClick={toggleOtherState}>
+              жми
+            </Button>
+            <h6 className=" text-orange-600">работает совмемтно с useRef</h6>
+          </div>
+        </CardWrapper>
+      </div>
+    </div>
+  )
+}
+
+export default PrevStateExample`
+
 export const raceConditions_1 = `'use client'
 import { FC, useEffect, useState } from 'react'
 import { mainInstance } from '@/api'
