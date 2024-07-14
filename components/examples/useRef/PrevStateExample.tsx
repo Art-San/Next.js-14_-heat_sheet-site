@@ -4,6 +4,15 @@ import CardWrapper from '../../common/Card'
 import SmallTitle from '@/components/typografy/SmallTitle'
 import { Button } from '@/components/ui/button'
 import ImageModal from '@/components/ImageModal'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/ui/accordion'
+
+import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
+import { prevState_1 } from '@/lib/data/hooks/useEffect/data'
 
 const PrevStateExample = () => {
   const prevState = useRef('')
@@ -17,11 +26,11 @@ const PrevStateExample = () => {
   }, [otherState])
 
   return (
-    <div className="flex items-center justify-center">
-      <div className="flex px-[50px] py-[10px] w-full justify-center">
+    <div className="flex flex-col justify-center gap-2">
+      <div className="flex gap-5 items-center">
         <CardWrapper>
           <SmallTitle>Предыдущее состояние</SmallTitle>
-          <div className=" flex flex-row gap-10 m-8 items-center">
+          <div className=" flex flex-col gap-1 m-2 items-center">
             <p className="font-bold text-gray-800">
               Prev State:{' '}
               <span className=" text-red-700">{prevState.current}</span>
@@ -32,16 +41,27 @@ const PrevStateExample = () => {
             <Button variant={'positive'} size={'sm'} onClick={toggleOtherState}>
               жми
             </Button>
+            <h6 className=" text-orange-600">работает совмемтно с useRef</h6>
           </div>
-          <h6 className=" text-orange-600">работает совмемтно с useRef</h6>
         </CardWrapper>
+        <div>
+          <ImageModal
+            path="/images/useEffect_PrevStateExample.png"
+            path500="/images/useState_500.png"
+          />
+        </div>
       </div>
-      <div>
-        <ImageModal
-          path="/images/useEffect_PrevStateExample.png"
-          path500="/images/useState_500.png"
-        />
-      </div>
+
+      <Accordion type="single" collapsible className="">
+        <AccordionItem value="item-1">
+          <AccordionTrigger className=" flex text-[24px] justify-center">
+            код
+          </AccordionTrigger>
+          <AccordionContent className="text-[18px] ">
+            <CodeHighlighting data={prevState_1} variant={'medium'} />
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </div>
   )
 }
