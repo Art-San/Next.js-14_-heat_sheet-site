@@ -18,6 +18,7 @@ import PrevStateExample from '@/components/examples/useRef/PrevStateExample'
 import RenderCountRef from '@/components/examples/useRef/RenderCountRef'
 import FocusInputRef from '@/components/examples/useRef/FocusInputRef'
 import ProgrammableActionsExample from '@/components/examples/useRef/ProgrammableActions'
+import ChildAccess from '@/components/examples/useRef/ChildAccess'
 
 const useRef = () => {
   return (
@@ -62,11 +63,11 @@ const useRef = () => {
           {/* <FocusInputRef /> */}
           {/* <RenderCountExample /> */}
           {/* <PrevStateExample /> */}
-          <h5 className="text-danger">
+          {/* <h5 className="text-danger">
             в ProgrammableActionsExample три вариана, два от GPT
-          </h5>
+          </h5> */}
           <ProgrammableActionsExample />
-          {/* <ExampleFileInput /> */}
+          <ChildAccess />
         </div>
       </div>
 
