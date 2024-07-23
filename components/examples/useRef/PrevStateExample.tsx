@@ -13,6 +13,7 @@ import {
 
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
 import { prevState_1 } from '@/lib/data/hooks/useEffect/data'
+import { prevStateExample } from '@/lib/data/hooks/useRef/data'
 
 const PrevStateExample = () => {
   const prevState = useRef('')
@@ -26,7 +27,7 @@ const PrevStateExample = () => {
   }, [otherState])
 
   return (
-    <div className="flex flex-col justify-center gap-2">
+    <div className="flex flex-col items-center justify-center gap-2">
       <div className="flex gap-5 items-center">
         <CardWrapper>
           <SmallTitle>Предыдущее состояние</SmallTitle>
@@ -58,7 +59,7 @@ const PrevStateExample = () => {
             код
           </AccordionTrigger>
           <AccordionContent className="text-[18px] ">
-            <CodeHighlighting data={prevState_1} variant={'medium'} />
+            <CodeHighlighting data={prevStateExample} variant={'medium'} />
           </AccordionContent>
         </AccordionItem>
       </Accordion>
@@ -67,3 +68,36 @@ const PrevStateExample = () => {
 }
 
 export default PrevStateExample
+
+// 'use client'
+// import { useRef, useState, useEffect } from 'react'
+
+// const PrevStateExample = () => {
+//   const prevState = useRef('')
+//   const [otherState, setOtherState] = useState('false')
+
+//   const toggleOtherState = () => {
+//     setOtherState((prevState) => (prevState === 'false' ? 'true' : 'false'))
+//   }
+
+//   useEffect(() => {
+//     prevState.current = otherState
+//   }, [otherState])
+
+//   return (
+//     <div>
+//       <div>
+//         <p>
+//           Prev State: <span>{prevState.current}</span>
+//         </p>
+//         <p>
+//           Current State: <span>{otherState}</span>
+//         </p>
+//         <button onClick={toggleOtherState}>жми</button>
+//         <h6>Работает совместно useEffect и useRef</h6>
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default PrevStateExample
