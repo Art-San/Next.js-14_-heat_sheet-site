@@ -21,7 +21,7 @@ const Click = () => {
       <div className="flex px-[50px] py-[10px] w-full justify-center">
         <CardWrapper>
           <SmallTitle>При нажатие минус 2 или плюс 1</SmallTitle>
-          <p>Вроде работае</p>
+          <p>Вроде работает</p>
           <Separator className="mt-4  bg-slate-300" />
           <div className="flex gap-10">
             <LuMinusCircle size={40} color={'red'} onClick={handleDecrement} />

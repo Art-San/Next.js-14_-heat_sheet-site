@@ -19,8 +19,8 @@ const Count = () => {
                 Должен добавлять по 1, setInterval на 60 сек
               </SmallTitle>
               <p>
-                Но хрен поими почему добавляет по 2, и вообще ломается
-                setInterval (ускаряется)
+                Но хрен пойми почему добавляет по 2, и вообще ломается
+                setInterval (ускоряется)
               </p>
               <Separator className="mt-4  bg-slate-300" />
               <Timer />

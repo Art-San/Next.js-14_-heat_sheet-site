@@ -12,7 +12,6 @@ import {
 } from '@/components/ui/accordion'
 
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
-import { prevState_1 } from '@/lib/data/hooks/useEffect/data'
 import { prevStateExample } from '@/lib/data/hooks/useRef/data'
 
 const PrevStateExample = () => {

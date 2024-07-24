@@ -26,7 +26,7 @@ function ExampleBad() {
           </h3>
           <h3 className=" text-base text-orange-700">
             2. useState(Array) или другой тип данных который ожидаем <br />
-            если не знаеш что придет, то сделай проверку <br />
+            если не знаешь что придет, то сделай проверку <br />
             {''}
             <code className=" text-green-700">
               if (!users) {<h6>Loading...</h6>}

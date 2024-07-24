@@ -1,8 +1,3 @@
-// const UseRefPage = () => {
-//   return <div>UseRefPage</div>
-// }
-// export default UseRefPage
-
 import React from 'react'
 import { Separator } from '@/components/ui/separator'
 import Subtitle from '@/components/typografy/Subtitle'
