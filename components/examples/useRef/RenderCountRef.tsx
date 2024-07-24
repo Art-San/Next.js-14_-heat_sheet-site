@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/accordion'
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
 import { renderCountRef } from '@/lib/data/hooks/useRef/data'
+import CardWrapper from '@/components/common/Card'
 
 interface CounterState {
   counter: number
@@ -24,32 +25,33 @@ const RenderCountRef = () => {
       ref.current = { counter: 0 }
     }
   }, [])
-
   return (
-    <div className="flex flex-col justify-center ">
-      <p className=" text-center">
-        Переменная которая не приводит к обновлению компонента
-      </p>
-      <div className="flex flex-col items-center gap-1">
-        <Button
-          size={'custom'}
-          variant={'positive'}
-          onClick={() => {
-            if (ref.current) {
-              ref.current.counter++
-            }
-          }}
-        >
-          На меня нажали {counter} раз.
-        </Button>
+    <div className="flex flex-col items-center ">
+      <div className="flex w-1/2">
+        <CardWrapper>
+          <p className=" text-center">
+            Переменная которая не приводит к обновлению компонента
+          </p>
+          <Button
+            size={'custom'}
+            variant={'positive'}
+            onClick={() => {
+              if (ref.current) {
+                ref.current.counter++
+              }
+            }}
+          >
+            На меня нажали {counter} раз.
+          </Button>
 
-        <Button
-          className=" bg-orange-500"
-          size={'custom'}
-          onClick={() => setCounter(ref.current?.counter || 0)}
-        >
-          Обновить
-        </Button>
+          <Button
+            className=" bg-orange-500"
+            size={'custom'}
+            onClick={() => setCounter(ref.current?.counter || 0)}
+          >
+            Обновить
+          </Button>
+        </CardWrapper>
       </div>
       <Accordion type="single" collapsible className="">
         <AccordionItem value="item-1">

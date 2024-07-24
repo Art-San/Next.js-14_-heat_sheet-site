@@ -47,6 +47,7 @@ const FocusInputRef = () => {
   const nameInputRef = useRef<HTMLInputElement>(null)
   const surnameInputRef = useRef<HTMLInputElement>(null)
 
+  console.log(nameInputRef.current) // null
   const handlerKeyUp1 = (e: any) => {
     if (e.key === 'Enter' && surnameInputRef.current) {
       surnameInputRef.current.focus()
@@ -58,6 +59,11 @@ const FocusInputRef = () => {
       nameInputRef.current.focus()
     }
   }
+
+  useEffect(() => {
+    console.log(nameInputRef.current)
+    // <input type="text" placeholder="Имя" class=" ........">
+  })
 
   return (
     <div className=" flex flex-col gap-2">
@@ -321,3 +327,116 @@ const ChildAccess = () => {
 }
 
 export default ChildAccess`
+
+export const exerciseUseRef = `'use client'
+import { useRef } from 'react'
+
+const ExerciseUseRef = () => {
+  const blockRef = useRef<HTMLDivElement>(null)
+  console.log('blokRef', blockRef)
+  const handleClick = () => {
+    if (blockRef.current) {
+      // Приведение типа к HTMLElement для доступа к свойству innerText
+      const secondChild = blockRef.current.children[1] as HTMLElement
+
+      secondChild.innerText = 'Text-2'
+      blockRef.current.style.width = '150px'
+      blockRef.current.style.height = '80px'
+    }
+  }
+  return (
+    <div>
+      <p className="mt-3">
+        У вас есть блок, у которого заданы ширина и высота.
+        Добавьте кнопку, при
+        нажатии которой изменятся следующие свойства:
+      </p>
+      <ul>
+        <li>Изменится содержимое блока на &quot;text&quot;</li>
+        <li>высота и ширина станут равны 150 и 80 соответственно</li>
+      </ul>
+      <div
+        ref={blockRef}
+        className="bg-red-400  rounded"
+        style={{
+          height: 40,
+          width: 60,
+          color: 'white'
+        }}
+      >
+        <small className=" mx-1">Блок-1</small>
+        <small>Блок-2</small>
+      </div>
+      <button className="" onClick={handleClick}>
+        Жми
+      </button>
+    </div>
+  )
+}
+
+export default ExerciseUseRef`
+
+export const examplesRef = `import CardWrapper from '@/components/common/Card'
+import { Button } from '@/components/ui/button'
+import { useCallback, useEffect, useReducer, useRef, useState } from 'react'
+
+export default function ExamplesRef() {
+  return (
+    <div className="App">
+      <h2>Interval example</h2>
+      <IntervalExample />
+    </div>
+  )
+}
+
+// Используем рефы для передачи коллбека в эффект
+const useEffectEvent = (callback: any) => {
+  const ref = useRef(callback)
+
+  ref.current = callback
+
+  return useCallback((...args: any) => {
+    ref.current(...args)
+  }, [])
+}
+
+const useRefValue = (value: any) => {
+  const ref = useRef(value)
+  ref.current = value
+  return ref
+}
+
+function useInterval(interval: any, enabled: any, onTick: any) {
+  const onTickEvent = useEffectEvent(onTick)
+  useEffect(() => {
+    if (!enabled) return
+    const i = setInterval(() => {
+      // onTick()
+      onTickEvent()
+    }, interval)
+    return () => clearInterval(i)
+  }, [interval, enabled, onTickEvent])
+}
+
+function IntervalExample() {
+  const [counter, setCounter] = useState(0)
+  const [, rerender] = useReducer((s) => s + 1, 0)
+  useInterval(1000, false, () => { // true работает интервал
+    console.log(counter)
+    setCounter((s) => s + 1)
+  })
+
+  console.log('rerender')
+
+  return (
+    <CardWrapper>
+      <div>Counter: {counter}</div>
+      <Button
+        size={'custom'}
+        variant={'positive'}
+        onClick={() => rerender()}>
+        increment
+      </Button>
+    </CardWrapper>
+  )
+}`

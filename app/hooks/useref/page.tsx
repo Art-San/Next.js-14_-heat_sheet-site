@@ -19,6 +19,8 @@ import RenderCountRef from '@/components/examples/useRef/RenderCountRef'
 import FocusInputRef from '@/components/examples/useRef/FocusInputRef'
 import ProgrammableActionsExample from '@/components/examples/useRef/ProgrammableActions'
 import ChildAccess from '@/components/examples/useRef/ChildAccess'
+import ExerciseUseRef from '@/components/examples/useRef/ExerciseUseRef'
+import ExamplesRef from '@/components/examples/useRef/ExamplesRef'
 
 const useRef = () => {
   return (
@@ -36,6 +38,12 @@ const useRef = () => {
               </AccordionTrigger>
               <AccordionContent className="text-[18px]">
                 <p>
+                  <code>useRef</code> это хук, который возвращает объект, объект
+                  этот одинаков между всеми ререндерами, у него есть поле{' '}
+                  <code>.current</code> в которое передается дефолтное значение
+                  из первого аргумента
+                </p>
+                <p className="mt-5">
                   <code>useRef</code> возвращает изменяемый ref-объект, свойство{' '}
                   <code>.current</code> которого инициализируется переданным
                   аргументом <code>(initialValue)</code>. Возвращённый объект
@@ -59,21 +67,15 @@ const useRef = () => {
       <div className="flex flex-col items-center w-[1120px] mx-auto">
         <Subtitle>Примеры</Subtitle>
         <div className=" flex flex-col gap-2">
+          <ExamplesRef />
           <RenderCountRef />
-          {/* <FocusInputRef /> */}
-          {/* <RenderCountExample /> */}
-          {/* <PrevStateExample /> */}
-          {/* <h5 className="text-danger">
-            в ProgrammableActionsExample три вариана, два от GPT
-          </h5> */}
+          <FocusInputRef />
+          <RenderCountExample />
+          <PrevStateExample />
           <ProgrammableActionsExample />
           <ChildAccess />
+          <ExerciseUseRef />
         </div>
-      </div>
-
-      <div>
-        {/* <Subtitle>Упражнения</Subtitle> */}
-        {/* <UseRefExercise /> */}
       </div>
     </>
   )

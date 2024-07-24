@@ -31,8 +31,8 @@ const ProgrammableActionsExample = () => {
     }
   }
   return (
-    <div className="">
-      <div className="">
+    <div className="flex flex-col items-center">
+      <div className="flex flex-col w-1/2">
         <CardWrapper>
           <SmallTitle>Программируемые действия и свойства</SmallTitle>
           <p>в ProgrammableActionsExample три варианта, два от GPT</p>

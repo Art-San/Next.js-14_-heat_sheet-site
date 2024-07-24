@@ -68,36 +68,3 @@ const PrevStateExample = () => {
 }
 
 export default PrevStateExample
-
-// 'use client'
-// import { useRef, useState, useEffect } from 'react'
-
-// const PrevStateExample = () => {
-//   const prevState = useRef('')
-//   const [otherState, setOtherState] = useState('false')
-
-//   const toggleOtherState = () => {
-//     setOtherState((prevState) => (prevState === 'false' ? 'true' : 'false'))
-//   }
-
-//   useEffect(() => {
-//     prevState.current = otherState
-//   }, [otherState])
-
-//   return (
-//     <div>
-//       <div>
-//         <p>
-//           Prev State: <span>{prevState.current}</span>
-//         </p>
-//         <p>
-//           Current State: <span>{otherState}</span>
-//         </p>
-//         <button onClick={toggleOtherState}>жми</button>
-//         <h6>Работает совместно useEffect и useRef</h6>
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default PrevStateExample
