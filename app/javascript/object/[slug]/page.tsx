@@ -22,7 +22,6 @@ export function generateStaticParams() {
 
 const ObjectPage = ({ params }: IProps) => {
   const { slug } = params
-  console.log(12, slug)
   const currentIndex = dataObjExamples.findIndex((item) => item.slug === slug)
   const nextMethod = dataObjExamples[currentIndex + 1]
 
