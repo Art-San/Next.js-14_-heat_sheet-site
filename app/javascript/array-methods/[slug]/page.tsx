@@ -1,4 +1,5 @@
 // import CompTable from '@/components/CompTable'
+import CompTable from '@/components/CompTable'
 import NavigationButtons from '@/components/buttons/NavigationButtons'
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
 import CardWrapper from '@/components/common/Card'
@@ -51,7 +52,7 @@ const ArrayMethodPage = ({ params }: IProps) => {
       <div className=" w-fit">
         <CodeHighlighting data={method?.code2 ?? ''} variant={'medium'} />
       </div>
-      {/* <CompTable arr={noCurrent} /> */}
+      <CompTable arr={noCurrent} />
     </div>
   )
 }

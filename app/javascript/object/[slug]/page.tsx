@@ -1,10 +1,12 @@
-import CompTable, { IData } from '@/components/CompTable'
+// import CompTable, { IData } from '@/components/CompTable'
+import CompTable from '@/components/CompTable'
 import NavigationButtons from '@/components/buttons/NavigationButtons'
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
 import CardWrapper from '@/components/common/Card'
 import SmallTitle from '@/components/typografy/SmallTitle'
 import { Separator } from '@/components/ui/separator'
-import { dataTypes } from '@/lib/data/javascript/dataTypes'
+
+import { dataObjExamples } from '@/lib/data/javascript/objects/data.bjects-examples'
 
 interface IProps {
   params: {
@@ -13,25 +15,24 @@ interface IProps {
 }
 
 export function generateStaticParams() {
-  return dataTypes.map((el) => ({
+  return dataObjExamples.map((el) => ({
     slug: el.slug
   }))
 }
 
-const DatatypePage = ({ params }: IProps) => {
+const ObjectPage = ({ params }: IProps) => {
   const { slug } = params
+  const currentIndex = dataObjExamples.findIndex((item) => item.slug === slug)
+  const nextMethod = dataObjExamples[currentIndex + 1]
 
-  const currentIndex = dataTypes.findIndex((item) => item.slug === slug)
-  const nextMethod = dataTypes[currentIndex + 1]
+  const noCurrent = dataObjExamples.filter((el) => el.slug !== slug)
 
-  const noCurrent = dataTypes.filter((el) => el.slug !== slug)
-
-  const type = dataTypes.find((el) => {
+  const type = dataObjExamples.find((el) => {
     return el.slug === slug
   })
 
   return (
-    <div className="flex  flex-col items-center">
+    <div className="flex  flex-col items-center gap-2">
       <NavigationButtons path={nextMethod?.slug} />
       {/* <div className="flex flex-col w-[90%] justify-center items-center lg:flex-row"> */}
       <div className="flex flex-col items-center justify-center lg:flex-row">
@@ -57,4 +58,4 @@ const DatatypePage = ({ params }: IProps) => {
   )
 }
 
-export default DatatypePage
+export default ObjectPage
