@@ -95,6 +95,11 @@ export const jSPointsMenu: {
     description: 'Обработка и манипуляция строк.'
   },
   {
+    title: 'Объект',
+    href: '/javascript/object',
+    description: 'Манипуляции с объектами'
+  },
+  {
     title: 'Conditionals',
     href: '/javascript/conditionals',
     description: 'Условные операторы в JavaScript.'
