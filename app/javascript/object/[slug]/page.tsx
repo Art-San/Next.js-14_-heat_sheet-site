@@ -53,7 +53,7 @@ const ObjectPage = ({ params }: IProps) => {
       <div className=" w-fit">
         <CodeHighlighting data={type?.code2 ?? ''} variant={'medium'} />
       </div>
-      {/* <CompTable arr={noCurrent} /> */}
+      <CompTable arr={noCurrent} />
     </div>
   )
 }
