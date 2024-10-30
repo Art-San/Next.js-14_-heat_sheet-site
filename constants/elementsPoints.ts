@@ -12,6 +12,11 @@ export const elementsPointsMenu: {
     title: 'Pagination',
     href: '/elements/pagination',
     description: 'Примеры простой пагинации'
+  },
+  {
+    title: 'Формы',
+    href: '/elements/form',
+    description: 'Примеры простых форм'
   }
   // {
   //   title: 'Типы данных',

@@ -15,10 +15,13 @@ function App() {
   const { data, isLoading, isSuccess, isError, isFetched } = useQuery({
     queryKey: ['post', page],
     queryFn: () => getData(page),
-    select: (data) => data.data, // избавляемся от лишней data
+    select: (data) => data.data, // Избавляемся от лишней data
     enabled: isAuth, // отключает включает запросник
+    placeholderData: keepPreviousData, // показываются предыдущие данные пока не появятся новые
+    staleTime: 1 * 60 * 1000, // срок устаревания данных, по умолчанию 0
+    gcTime: 1000 * 60 * 5, // 5 минут по умолчанию, хранение кеша
     retry: 1, // (0) при ошибке один запрос и успокоился, если (1) то будет 2
-    refetchOnWindowFocus: false // запрос при фокусе
+    refetchOnWindowFocus: false // откл запросов при смене фокусе
   })
 
   // isLoading срабатывает когда идет первый раз запрос

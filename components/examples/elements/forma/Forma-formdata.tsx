@@ -1,19 +1,18 @@
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
 import { pagination } from '@/lib/data/elements/pagination'
+import Example1 from './Example-1'
 
-import ListProducts from './ListProducts'
-
-const Pagination = () => {
+const Forma = () => {
   return (
     <>
       <div className=" flex flex-col gap-3">
         <div className=" flex flex-col gap-1 h-full">
-          <ListProducts />
+          <Example1 />
         </div>
-        <CodeHighlighting data={pagination} variant={'medium'} />
+        {/* <CodeHighlighting data={pagination} variant={'medium'} /> */}
       </div>
     </>
   )
 }
 
-export default Pagination
+export default Forma
