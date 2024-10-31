@@ -21,7 +21,6 @@ async function getData(
 const ListProducts = () => {
   const [page, setPage] = useState(0)
   const limitItem = 10
-  // console.log(11, page)
   const { data, isLoading, isSuccess, isError, isPlaceholderData } = useQuery({
     queryKey: ['post', page],
     queryFn: (meta) => getData(page, limitItem, meta),
@@ -122,30 +121,6 @@ const ListProducts = () => {
         </Button>
       </div>
     </>
-    // <>
-    //   {data &&
-    //     data.products.map((product) => (
-    //       <h3 key={product.id}>
-    //         {product.title}
-    //         {''} {product.id}
-    //       </h3>
-    //     ))}
-    //   <div className=" flex justify-between">
-    //     <Button onClick={() => setPage((p: number) => p - 1)} disabled={!page}>
-    //       Назад
-    //     </Button>
-    //     {pagesArray.map((pageNumber) => (
-    //       <Button
-    //         key={pageNumber}
-    //         onClick={() => handlePageClick(pageNumber)}
-    //         disabled={page === pageNumber}
-    //       >
-    //         {pageNumber + 1}
-    //       </Button>
-    //     ))}
-    //     <Button onClick={() => setPage((p: number) => p + 1)}>Далее</Button>
-    //   </div>
-    // </>
   )
 }
 

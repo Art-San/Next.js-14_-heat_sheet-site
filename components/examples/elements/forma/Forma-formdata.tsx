@@ -1,6 +1,6 @@
 import CodeHighlighting from '@/components/codeHighlighting/CodeHighlighting'
-import { pagination } from '@/lib/data/elements/pagination'
 import Example1 from './Example-1'
+import { formaCode } from '@/lib/data/forma/forma'
 
 const Forma = () => {
   return (
@@ -9,7 +9,7 @@ const Forma = () => {
         <div className=" flex flex-col gap-1 h-full">
           <Example1 />
         </div>
-        {/* <CodeHighlighting data={pagination} variant={'medium'} /> */}
+        <CodeHighlighting data={formaCode} variant={'medium'} />
       </div>
     </>
   )

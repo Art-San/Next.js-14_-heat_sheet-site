@@ -1,8 +1,8 @@
-'use client'
+export const formaCode = `'use client'
 import React, { FormEvent, useState } from 'react'
 import { Send, User, Mail, CheckSquare } from 'lucide-react'
 
-function Test() {
+function Example1() {
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState<'success' | 'error' | null>(null)
 
@@ -12,13 +12,13 @@ function Test() {
     const name = formData.get('name')
     const email = formData.get('email')
     const subscribe = formData.get('subscribe')
-
+    console.log(12, name, email, subscribe)
     if (name && email) {
       setStatus('success')
       setMessage(
-        `Form submitted successfully! ${
+        'Form submitted successfully! {
           subscribe ? 'You are subscribed to newsletter.' : ''
-        }`
+        }'
       )
       e.currentTarget.reset()
     } else {
@@ -28,8 +28,7 @@ function Test() {
   }
 
   return (
-    <div className=" bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center p-4">
-      {/* <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center p-4"> */}
+    <div className=" bg-gradient-to-br from-blue-300 to-indigo-50 rounded-2xl flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <form
           onSubmit={handleSubmit}
@@ -100,11 +99,11 @@ function Test() {
 
           {message && (
             <div
-              className={`p-3 rounded-lg text-sm ${
+              className={'p-3 rounded-lg text-sm {
                 status === 'success'
                   ? 'bg-green-50 text-green-700'
                   : 'bg-red-50 text-red-700'
-              }`}
+              }'}
             >
               {message}
             </div>
@@ -123,4 +122,4 @@ function Test() {
   )
 }
 
-export default Test
+export default Example1`

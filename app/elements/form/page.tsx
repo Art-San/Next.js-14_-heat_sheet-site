@@ -8,7 +8,6 @@ import {
 import Subtitle from '@/components/typografy/Subtitle'
 import Title from '@/components/typografy/Title'
 import Forma from '@/components/examples/elements/forma/Forma-formdata'
-import Test from '@/components/examples/elements/forma/test'
 
 const PaginationPage = () => {
   return (
