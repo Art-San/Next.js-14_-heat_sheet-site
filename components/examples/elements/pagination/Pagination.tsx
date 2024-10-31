@@ -7,7 +7,7 @@ const Pagination = () => {
   return (
     <>
       <div className=" flex flex-col gap-3">
-        <div className=" flex flex-col gap-1 h-[350px]">
+        <div className=" flex flex-col gap-1 h-full">
           <ListProducts />
         </div>
         <CodeHighlighting data={pagination} variant={'medium'} />

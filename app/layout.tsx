@@ -21,6 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ReactQueryProvider>
           <NavigationMenuDemo />
+
           <div className=" flex flex-col items-center mt-20 mx-auto w-[90%] md:w-[80%] lg:w-[70%] xl:w-[1140px]">
             {children}
           </div>
